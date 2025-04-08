@@ -1,0 +1,41 @@
+@page "/product/{id:int}"
+@using BlazorComAPI.Shared
+@using global::Client.Services
+@inject IProductService _IProductServiceClient
+
+<h3>Product Details</h3>
+
+@if(produto_encontrado == null){
+    <span>Loading Produtos.....</span>
+} else{
+    <div class="media">
+        <div class="media-img-wrapper mr-2">
+            <img class="media-img" src="@produto_encontrado.ImageUrl" alt="@produto_encontrado.Title"/>
+        </div>
+        <div class="media-body">
+            <h2 class="mb-0">@produto_encontrado.Title</h2>
+            <p>@produto_encontrado.Description</p>
+            <h4 class="price">
+                $@produto_encontrado.Price
+            </h4>
+        </div>
+    </div>
+}
+
+@code{
+
+    private Produto? produto_encontrado = null;
+
+    [Parameter]
+    public int Id {get;set;}
+    private string message = string.Empty;
+
+    protected override async Task OnParametersSetAsync(){
+        List<Produto> lista_produtos = new List<Produto>();
+
+            produto_encontrado = await _IProductServiceClient.GetProdutosById(Id);
+            //produto_encontrado = lista_produtos.Find(p => p.Id == Id);
+    }
+
+}    
+   

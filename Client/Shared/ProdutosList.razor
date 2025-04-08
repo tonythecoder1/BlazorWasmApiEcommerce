@@ -1,0 +1,44 @@
+@using BlazorComAPI.Shared
+@using global::Client.Services
+@using global::Shared
+@inject IProductService _IProductServiceClient
+
+@if (lista_produtos == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <ul class="list-unstyled">
+        @foreach (var item in lista_produtos)
+        {
+            <li class="media my-3">
+                <div class="media-img-wrapper me-2">
+                    <a href="/product/@item.Id">
+                        <img src="@item.ImageUrl" alt="@item.Title" style="max-width: 120px;" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="#">
+                        <h4 class="mb-0">@item.Title</h4>
+                    </a>
+                    <p>@item.Description</p>
+                    <h5 class="price">
+                        $@item.Price
+                    </h5>
+                </div>
+            </li>
+        }
+    </ul>
+}
+
+@code {
+    List<Produto>? lista_produtos;
+    protected override async Task OnInitializedAsync()
+    {
+        lista_produtos = await _IProductServiceClient.GetProdutos();
+     
+    }
+
+
+}

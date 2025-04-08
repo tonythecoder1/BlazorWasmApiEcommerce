@@ -1,0 +1,11 @@
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/bin/Debug/net6.0/BlazorComAPI.Shared.deps.json
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/bin/Debug/net6.0/BlazorComAPI.Shared.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/bin/Debug/net6.0/BlazorComAPI.Shared.pdb
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.AssemblyInfoInputs.cache
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.AssemblyInfo.cs
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.csproj.CoreCompileInputs.cache
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/refint/BlazorComAPI.Shared.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.pdb
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/ref/BlazorComAPI.Shared.dll

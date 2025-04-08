@@ -1,0 +1,55 @@
+﻿@page "/"
+@page "/categoria/{categoryUrl}"
+@using BlazorComAPI.Shared
+@using global::Client.Services
+@inject IProductService _iproductsService
+
+<h3 class="mt-4 mb-3">Produtos da categoria: @categoryUrl</h3>
+
+@if (produtos is null)
+{
+    <p>🔄 Carregando produtos...</p>
+}
+else if (produtos.Count == 0)
+{
+    <p>⚠️ Nenhum produto encontrado para esta categoria.</p>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var item in produtos)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    @if (!string.IsNullOrEmpty(item.ImageUrl))
+                    {
+                        <img src="@item.ImageUrl" class="card-img-top" alt="@item.Title" style="object-fit: cover; height: 200px;">
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">@item.Description</p>
+                        <p class="card-text fw-bold text-danger">@item.Price.ToString()</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <small>Produto da categoria: @categoryUrl</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string? categoryUrl { get; set; }
+
+    private List<Produto>? produtos;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (!string.IsNullOrWhiteSpace(categoryUrl))
+        {
+            produtos = await _iproductsService.GetProdutosByCategoria(categoryUrl);
+        }
+    }
+}

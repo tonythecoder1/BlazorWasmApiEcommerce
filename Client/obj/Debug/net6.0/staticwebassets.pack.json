@@ -1,0 +1,93 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/blazor.webassembly.js",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/zfinng97lh.gz",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/scopedcss/bundle/BlazorComAPI.Client.styles.css",
+      "PackagePath": "staticwebassets/BlazorComAPI.Client.styles.css"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/open-iconic/FONT-LICENSE",
+      "PackagePath": "staticwebassets/css/open-iconic"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/open-iconic/ICON-LICENSE",
+      "PackagePath": "staticwebassets/css/open-iconic"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/open-iconic/README.md",
+      "PackagePath": "staticwebassets/css/open-iconic/README.md"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/open-iconic/font/css/open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.eot"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.otf"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.svg"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.ttf"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.woff"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/icon-192.png",
+      "PackagePath": "staticwebassets/icon-192.png"
+    },
+    {
+      "Id": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.BlazorComAPI.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.build.BlazorComAPI.Client.props",
+      "PackagePath": "build\\BlazorComAPI.Client.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.BlazorComAPI.Client.props",
+      "PackagePath": "buildMultiTargeting\\BlazorComAPI.Client.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.BlazorComAPI.Client.props",
+      "PackagePath": "buildTransitive\\BlazorComAPI.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

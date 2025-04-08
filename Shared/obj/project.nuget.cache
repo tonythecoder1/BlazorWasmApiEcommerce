@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lJcCOD363fE=",
+  "success": true,
+  "projectFilePath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/BlazorComAPI.Shared.csproj",
+  "expectedPackageFiles": [
+    "/Users/antonyferreira/.nuget/packages/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
+  ],
+  "logs": []
+}
