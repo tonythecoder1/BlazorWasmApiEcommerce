@@ -12,7 +12,6 @@ namespace Server.Controllers
     {
         private readonly IProdutoService _produtoService;
 
-        // ✅ Corrige nome do parâmetro (sem underline)
         public ProdutoController(IProdutoService produtoService)
         {
             _produtoService = produtoService;
@@ -36,6 +35,25 @@ namespace Server.Controllers
         public async Task<ActionResult<List<Produto>>> GetProdutoByCategoria(string categoriaName){
             var produtos = await _produtoService.GetProdutotByCategoria(categoriaName);
             return Ok(produtos);
+        }
+
+        [HttpGet("search/{searchText}")]
+        public async Task<ActionResult<List<Produto>>> GetSearchProducts(string searchText){
+            var produtos = await _produtoService.SearchProductsAsync(searchText);
+            return Ok(produtos);
+        }
+
+        [HttpGet("search-suggestions/{searchSuggestions}")]
+        public async Task<ActionResult<List<Produto>>> GetSearchSuggestions(string searchSuggestions){
+            var produtos = await _produtoService.GetProductSearchSuggestions(searchSuggestions);
+            return Ok(produtos);
+        }
+
+        [HttpGet("featured")]
+        public async Task<ActionResult<List<Produto>>> GetFeatured()
+        {
+            var result = await _produtoService.GetFeaturedProducts();
+            return Ok(result);
         }
     }
 }

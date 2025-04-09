@@ -11,5 +11,8 @@ namespace Server.Services
         Task<List<Produto>> GetProdutosAsync();
         Task<Produto> GetProdutosAsynById(int ProdutoId);
         Task<List<Produto>> GetProdutotByCategoria(string Url);
+        Task<List<Produto>> SearchProductsAsync(string searchText);
+        Task<List<string>> GetProductSearchSuggestions(string searchText);
+        Task<List<Produto>> GetFeaturedProducts();
     }
 }

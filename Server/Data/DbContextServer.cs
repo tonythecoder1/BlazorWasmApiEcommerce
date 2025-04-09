@@ -16,10 +16,32 @@ namespace Server.Data
 
         public DbSet<Produto> Produtos_TBL { get; set; } = null!;
         public DbSet<Categoria> Categorias_TBL { get; set; } = null!;
+        public DbSet<ProductVariant> ProdutoVariante_TBL { get; set; } = null!;
+        public DbSet<ProductType> ProductType_TBL { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder model)
         {
             base.OnModelCreating(model);
+
+            model.Entity<ProductVariant>()   //Tabela de Juncao com chave Composta
+                .HasKey(p => new { p.ProductId, p.ProductTypeId }); //chave primária composta tabela de juncao
+
+            model.Entity<ProductVariant>()
+                 .HasOne(p => p.produto_nav)
+                 .WithMany(p => p.productVariants)
+                 .HasForeignKey(p => p.ProductId);
+
+            model.Entity<ProductVariant>()
+                  .HasOne(p => p.productType)
+                  .WithMany(p => p.ProductVariants)
+                  .HasForeignKey(p => p.ProductTypeId);
+
+            model.Entity<ProductType>().HasData(
+                new ProductType { Id = 1, Name = "Padrão" },
+                new ProductType { Id = 2, Name = "Tamanho Pequeno" },
+                new ProductType { Id = 3, Name = "Tamanho Médio" },
+                new ProductType { Id = 4, Name = "Tamanho Grande" }
+            );
 
             // Categorias
             model.Entity<Categoria>().HasData(
@@ -35,74 +57,109 @@ namespace Server.Data
                     Id = 1,
                     Title = "Teclado Mecânico",
                     Description = "Teclado com switches azuis",
-                    Price = 59.99m,
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 2
+                    CategoriaId = 2,
+                    featured = true
                 },
                 new Produto
                 {
                     Id = 2,
                     Title = "Rato Gamer",
                     Description = "Mouse com DPI ajustável e LED RGB",
-                    Price = 29.99m,
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 2
+                    CategoriaId = 2,
+                    featured = false
                 },
                 new Produto
                 {
                     Id = 3,
                     Title = "Livro: Clean Code",
                     Description = "Um guia de boas práticas de programação por Robert C. Martin.",
-                    Price = 45.90m,
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 1
+                    CategoriaId = 1,
+                    featured = false
                 },
                 new Produto
                 {
                     Id = 4,
                     Title = "Livro: Domain-Driven Design",
                     Description = "Aborda modelagem de software baseada em domínio.",
-                    Price = 68.00m,
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 1
+                    CategoriaId = 1,
+                    featured = false
                 },
                 new Produto
                 {
                     Id = 5,
                     Title = "Filme: Inception",
                     Description = "Um thriller de ficção científica dirigido por Christopher Nolan.",
-                    Price = 19.99m,
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 2
+                    CategoriaId = 2,
+                    featured = true
                 },
                 new Produto
                 {
                     Id = 6,
                     Title = "Filme: Interstellar",
                     Description = "Exploração espacial para salvar a humanidade.",
-                    Price = 24.99m,
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 2
+                    CategoriaId = 2,
+                    featured = true
                 },
                 new Produto
                 {
                     Id = 7,
                     Title = "Jogo: The Witcher 3",
                     Description = "RPG de mundo aberto com narrativa envolvente.",
-                    Price = 39.90m,
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 3
+                    CategoriaId = 3,
+                    featured = true
                 },
                 new Produto
                 {
                     Id = 8,
-                    Title = "Jogo: God of War",
+                    Title = "God of War",
                     Description = "Kratos em sua jornada épica no mundo nórdico.",
-                    Price = 49.99m,
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 3
+                    CategoriaId = 3,
+                    featured = true
                 }
             );
+
+            model.Entity<ProductVariant>().HasData(
+                new ProductVariant
+                {
+                    ProductId = 1,
+                    ProductTypeId = 1,
+                    Name = "Teclado Padrão",
+                    Price = 99.99m,
+                    OriginalPrice = 149.99m
+                },
+                new ProductVariant
+                {
+                    ProductId = 1,
+                    ProductTypeId = 3,
+                    Name = "Teclado Médio",
+                    Price = 109.99m,
+                    OriginalPrice = 159.99m
+                },
+                new ProductVariant
+                {
+                    ProductId = 2,
+                    ProductTypeId = 2,
+                    Name = "Rato Pequeno",
+                    Price = 59.99m,
+                    OriginalPrice = 89.99m
+                },
+            new ProductVariant
+            {
+                ProductId = 2,
+                ProductTypeId = 4,
+                Name = "Rato Grande",
+                Price = 69.99m,
+                OriginalPrice = 99.99m
+            }
+        );
         }
     }
 }

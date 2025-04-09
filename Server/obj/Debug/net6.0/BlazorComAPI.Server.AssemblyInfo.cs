@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorComAPI.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f627538e6d06dfd216c57be00654d452998040a")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorComAPI.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorComAPI.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
