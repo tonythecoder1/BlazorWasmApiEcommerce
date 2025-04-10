@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KbWzQS9ctWc=",
+  "dgSpecHash": "y/Bxbg3ZitI=",
   "success": true,
   "projectFilePath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/BlazorComAPI.Server.csproj",
   "expectedPackageFiles": [
+    "/Users/antonyferreira/.nuget/packages/blazored.localstorage/4.5.0/blazored.localstorage.4.5.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.authorization/6.0.7/microsoft.aspnetcore.authorization.6.0.7.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.components/6.0.7/microsoft.aspnetcore.components.6.0.7.nupkg.sha512",

@@ -15,6 +15,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProdutoService, ProdutoService>();  // Quando alguém pedir IProdutoService, forneça uma instância de ProdutoService
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 builder.Services.AddDbContext<DbContextServer>(options =>
 {

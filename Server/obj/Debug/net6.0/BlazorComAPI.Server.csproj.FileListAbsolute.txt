@@ -13,6 +13,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/BlazorComAPI.Server.runtimeconfig.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/BlazorComAPI.Server.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/BlazorComAPI.Server.pdb
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Blazored.LocalStorage.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Humanizer.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.AspNetCore.Authorization.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.AspNetCore.Components.dll
