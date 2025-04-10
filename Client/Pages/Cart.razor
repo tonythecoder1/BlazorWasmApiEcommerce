@@ -1,0 +1,179 @@
+@page "/cart"
+@using Server.Services
+@using global::Shared
+@inject ICartServiceClient _ICartService
+
+
+
+<h3 class="cart-title">🛒 Carrinho de Compras</h3>
+
+@if (lista_Produto_Dto == null || lista_Produto_Dto.Count == 0)
+{
+    <div class="cart-empty">
+        <span>O seu carrinho está vazio.</span>
+    </div>
+}
+else
+{
+    <div class="cart-items">
+        @foreach (var item in lista_Produto_Dto)
+        {
+            <div class="cart-item">
+                <img src="@item.ImageUrl" class="cart-item-image" alt="@item.Title" />
+
+                <div class="cart-item-info">
+                    <a href="/product/@item.ProductId" class="cart-item-title">@item.Title</a>
+                    <div class="cart-item-type">@item.ProductType</div><br />
+                    <input type="number" class="form-control input-quantity" @bind="item.Quantidade" @bind:event="oninput"
+                        @onchange="(e) => UpdateQuantity(e, item)" />
+
+
+                    <button class="btn-delete" title="Remover item"
+                        @onclick="() => RemoveProduct(item.ProductId, item.ProductTypeId)">
+                        Remover
+                    </button>
+
+                </div>
+
+                <div class="cart-item-price"><i class="bi bi-currency-euro"></i> @item.Price.ToString("F2")</div>
+            </div>
+        }
+
+        <div class="cart-total">
+            <span>Total (@lista_Produto_Dto.Count):</span>
+            <strong><i class="bi bi-currency-euro"></i> @lista_Produto_Dto.Sum(p => p.Price).ToString("F2")</strong>
+        </div>
+    </div>
+}
+
+<style>
+    .cart-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .cart-empty {
+        font-style: italic;
+        color: gray;
+        margin-top: 20px;
+    }
+
+    .cart-items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .cart-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cart-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background-color: #f0f8ff;
+        /* Azul claro suave como destaque */
+    }
+
+
+    .cart-item-image {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 15px;
+    }
+
+    .cart-item-info {
+        flex-grow: 1;
+        margin-left: 15px;
+    }
+
+    .cart-item-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .cart-item-title:hover {
+        text-decoration: underline;
+    }
+
+    .cart-item-type {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 4px;
+    }
+
+    .cart-item-price {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #333;
+        min-width: 90px;
+        text-align: right;
+    }
+
+    .cart-total {
+        text-align: right;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding-top: 20px;
+        border-top: 2px solid #eee;
+    }
+
+
+    .btn-delete {
+        background-color: transparent;
+        border: 1px solid #dc3545;
+        color: #dc3545;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .btn-delete:hover {
+        background-color: #dc3545;
+        color: white;
+        transform: scale(1.05);
+    }
+</style>
+
+@code {
+    List<CartProductDTO> lista_Produto_Dto = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        lista_Produto_Dto = await _ICartService.GetCartProductsDto();
+    }
+
+    private async Task RemoveProduct(int ProductId, int ProductTypeId)
+    {
+        await _ICartService.RemoveItemsFromCart(ProductId, ProductTypeId);
+        StateHasChanged();
+    }
+
+    public async Task UpdateQuantity(ChangeEventArgs args, CartProductDTO produto)
+    {
+        produto.Quantidade = int.Parse(args.Value.ToString());
+        if (produto.Quantidade < 1)
+        {
+            produto.Quantidade = 1;
+        }
+        await _ICartService.UpdateQuantidade(produto);
+    }
+
+}

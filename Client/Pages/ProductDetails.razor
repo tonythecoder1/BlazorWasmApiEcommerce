@@ -1,41 +1,113 @@
 @page "/product/{id:int}"
 @using BlazorComAPI.Shared
+@using Server.Services
 @using global::Client.Services
+@using global::Shared
+@inject ICartServiceClient _ICartService
 @inject IProductService _IProductServiceClient
 
 <h3>Product Details</h3>
 
-@if(produto_encontrado == null){
-    <span>Loading Produtos.....</span>
-} else{
+@if (loadError)
+{
+    <div class="alert alert-danger">
+         Ocorreu um erro ao carregar o produto. Tente novamente mais tarde.
+    </div>
+}
+else if (produto_encontrado == null)
+{
+    <span>🔄 Carregando produto...</span>
+}
+else
+{
+    var selectedVariant = GetSelectedVariant();
+
     <div class="media">
         <div class="media-img-wrapper mr-2">
-            <img class="media-img" src="@produto_encontrado.ImageUrl" alt="@produto_encontrado.Title"/>
+            <img class="media-img" src="@produto_encontrado.ImageUrl" alt="@produto_encontrado.Title" />
         </div>
         <div class="media-body">
             <h2 class="mb-0">@produto_encontrado.Title</h2>
             <p>@produto_encontrado.Description</p>
-            <h4 class="price">
-                $@produto_encontrado.Price
-            </h4>
+
+            @if (produto_encontrado.productVariants != null && produto_encontrado.productVariants.Count > 1)
+            {
+                <div class="my-2">
+                    <select class="form-control" @bind="currentTypeId">
+                        @foreach (var variante in produto_encontrado.productVariants)
+                        {
+                            <option value="@variante.ProductTypeId">
+                                @(!string.IsNullOrEmpty(variante.productType?.Name) 
+                                    ? variante.productType.Name 
+                                    : "Tipo desconhecido")
+                            </option>
+                        }
+                    </select>
+                </div>
+            }
+
+            @if (selectedVariant != null)
+            {
+                <div class="mt-2">
+                    @if (selectedVariant.OriginalPrice > selectedVariant.Price)
+                    {
+                        <p class="text-muted" style="text-decoration: line-through;">
+                            <i class="bi bi-currency-euro"></i>@selectedVariant.OriginalPrice
+                        </p>
+                    }
+                    <p><strong>Preço:</strong> 
+                    <i class="bi bi-currency-euro"/> @selectedVariant.Price </p> 
+                </div>
+            }
+            <button class="btn btn-primary" @onclick="AddToCart">
+                <i class="oi oi-cart"></i> &nbsp;&nbsp;&nbsp;Add to Cart </button>
         </div>
     </div>
 }
 
-@code{
-
+@code {
     private Produto? produto_encontrado = null;
+    private bool loadError = false;
 
     [Parameter]
-    public int Id {get;set;}
-    private string message = string.Empty;
+    public int Id { get; set; }
 
-    protected override async Task OnParametersSetAsync(){
-        List<Produto> lista_produtos = new List<Produto>();
+    private int currentTypeId;
 
+    protected override async Task OnParametersSetAsync()
+    {
+        loadError = false;
+
+        try
+        {
             produto_encontrado = await _IProductServiceClient.GetProdutosById(Id);
-            //produto_encontrado = lista_produtos.Find(p => p.Id == Id);
+
+            if (produto_encontrado?.productVariants?.Any() == true)
+            {
+                currentTypeId = produto_encontrado.productVariants[0].ProductTypeId;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar produto: {ex.Message}");
+            loadError = true;
+        }
     }
 
-}    
-   
+    private ProductVariant? GetSelectedVariant()
+    {
+        return produto_encontrado?.productVariants
+            .FirstOrDefault(v => v.ProductTypeId == currentTypeId);  //buscar variante com id atual
+    }
+
+    public async Task AddToCart(){
+        var productVariant = GetSelectedVariant();
+        var cartItem = new CardItem{
+            ProductId = productVariant.ProductId,
+            ProductTypeId = productVariant.ProductTypeId
+        };
+
+        await _ICartService.AddCart(cartItem);
+        
+    } 
+}

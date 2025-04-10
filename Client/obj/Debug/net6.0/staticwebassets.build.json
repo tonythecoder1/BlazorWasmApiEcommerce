@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6cYuWGGQv73qoGPeGdlr7Ga3i3L2DmyUDkS5X0xw2LA=",
+  "Hash": "bAvyiP9UDNhgOwmISWkS3EOYhu4LE9s+bW9eeMBXGmk=",
   "Source": "BlazorComAPI.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/bin/Debug/net6.0/BlazorComAPI.Shared.pdb"
+    },
+    {
+      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll",
+      "SourceId": "BlazorComAPI.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/antonyferreira/.nuget/packages/blazored.localstorage/4.5.0/lib/net6.0/Blazored.LocalStorage.dll"
     },
     {
       "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/dotnet.6.0.36.n5pa39yhmq.js",
@@ -5411,6 +5430,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Linq.dll"
+    },
+    {
+      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/fs9d5j3xd9.gz",
+      "SourceId": "BlazorComAPI.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll"
     },
     {
       "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/fvdx89erbb.gz",

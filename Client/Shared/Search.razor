@@ -1,0 +1,67 @@
+@using global::Client.Services
+@inject NavigationManager _navigationManager
+@inject IProductService _iproductsService
+
+<h3>Search</h3>
+
+<div class="input-group">
+    <input @bind-value = "searchText" 
+            @bind-value:event="oninput" 
+            type="search" 
+            list="products" 
+            @onkeyup="HandleSearchKey"  
+            class="form-control" 
+            placeholder="Search..." 
+            @ref="searchInput"/>   @* Referência ao input para uso com FocusAsync *@
+
+    <datalist id="products"> @*envia as sugestoes para input *@
+        @foreach(var suggestion in lista_suggestions){
+            <option value="@suggestion" />
+        }
+    </datalist>
+    <div class="input-group-append">
+        <button class="btn btn-primary" @onclick="SearchProducts">
+            <span class="oi oi-magnifying-glass"></span>
+        </button>
+    </div>
+</div>
+
+
+
+
+@code{
+    private string searchText = string.Empty;
+    private List<String> lista_suggestions = new();
+    protected ElementReference searchInput;
+
+    protected override void OnParametersSet()   //chamado sempre que um componente recebe parametros
+{
+    if (!_navigationManager.Uri.EndsWith("/search")) 
+    {
+        searchText = string.Empty;
+        lista_suggestions.Clear();
+        StateHasChanged();
+    }
+}
+
+    protected override async Task OnAfterRenderAsync(bool firstRender){
+        if(firstRender)  //depois de renderizar tudo no browser
+        await searchInput.FocusAsync(); //envia o cursor direatemente para a barra de pesquisa
+
+    }
+
+    public void SearchProducts(){
+        _navigationManager.NavigateTo($"search/{searchText}");
+    }
+
+    public async Task HandleSearchKey(KeyboardEventArgs args){
+        if(args.Key == null || args.Key.Equals("Enter")){
+            SearchProducts();
+        } else if(searchText.Length > 1){
+            lista_suggestions = await _iproductsService.GetSearchTextSuggestions(searchText);
+            StateHasChanged();
+
+        }
+    }
+}
+

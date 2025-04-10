@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8nrWvJ+p/bg=",
+  "dgSpecHash": "C8Lbj4cCPd0=",
   "success": true,
   "projectFilePath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/BlazorComAPI.Client.csproj",
   "expectedPackageFiles": [
+    "/Users/antonyferreira/.nuget/packages/blazored.localstorage/4.5.0/blazored.localstorage.4.5.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.authorization/6.0.7/microsoft.aspnetcore.authorization.6.0.7.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.components/6.0.7/microsoft.aspnetcore.components.6.0.7.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.components.analyzers/6.0.7/microsoft.aspnetcore.components.analyzers.6.0.7.nupkg.sha512",
@@ -36,9 +37,9 @@
     "/Users/antonyferreira/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/system.text.json/6.0.0/system.text.json.6.0.0.nupkg.sha512",
+    "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "/Users/antonyferreira/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/6.0.36/microsoft.netcore.app.runtime.mono.browser-wasm.6.0.36.nupkg.sha512",
-    "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
+    "/Users/antonyferreira/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/6.0.36/microsoft.netcore.app.runtime.mono.browser-wasm.6.0.36.nupkg.sha512"
   ],
   "logs": []
 }

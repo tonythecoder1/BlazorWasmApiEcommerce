@@ -1,10 +1,25 @@
 ﻿@page "/"
 @page "/categoria/{categoryUrl}"
+@page "/search/{searchText}"
 @using BlazorComAPI.Shared
 @using global::Client.Services
 @inject IProductService _iproductsService
+@inject NavigationManager Navigation
 
-<h3 class="mt-4 mb-3">Produtos da categoria: @categoryUrl</h3>
+@if (!string.IsNullOrEmpty(categoryUrl))
+{
+    <h3 class="mt-4 mb-3">Categoria: @categoryUrl</h3>
+    searchText = null;
+}
+else if (!string.IsNullOrEmpty(searchText))
+{
+    <h3 class="mt-4 mb-3">Resultados para "@searchText"</h3>
+}
+else
+{
+    <h3 class="mt-4 mb-3">Top Produtos</h3>
+    searchText = null;
+}
 
 @if (produtos is null)
 {
@@ -28,22 +43,50 @@ else
                     <div class="card-body">
                         <h5 class="card-title">@item.Title</h5>
                         <p class="card-text">@item.Description</p>
-                        <p class="card-text fw-bold text-danger">@item.Price.ToString()</p>
+                        <p class="card-text">@GetPriceText(item)</p>
                     </div>
                     <div class="card-footer text-muted">
                         <small>Produto da categoria: @categoryUrl</small>
+                    </div>
+                    <div class="p-2">
+                        <button class="btn btn-primary" @onclick="() => VerDetalhes(item.Id)">
+                            Ver detalhes
+                        </button>
                     </div>
                 </div>
             </div>
         }
     </div>
+
+    @* PAGINAÇÃO *@
+    @if (totalPaginas > 1 && !string.IsNullOrWhiteSpace(searchText))
+    {
+        <nav class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(paginaAtual == 1 ? "disabled" : "")">
+                    <button class="page-link" @onclick="Anterior">Anterior</button>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link">Página @paginaAtual de @totalPaginas</span>
+                </li>
+                <li class="page-item @(paginaAtual == totalPaginas ? "disabled" : "")">
+                    <button class="page-link" @onclick="Proxima">Próxima</button>
+                </li>
+            </ul>
+        </nav>
+    }
 }
 
 @code {
     [Parameter]
     public string? categoryUrl { get; set; }
 
+    [Parameter]
+    public string? searchText { get; set; }
+
     private List<Produto>? produtos;
+    private int paginaAtual = 1;
+    private int totalPaginas = 1;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -51,5 +94,57 @@ else
         {
             produtos = await _iproductsService.GetProdutosByCategoria(categoryUrl);
         }
+        else if (!string.IsNullOrWhiteSpace(searchText))
+        {
+            await CarregarResultados();
+        }
+        else
+        {
+            produtos = await _iproductsService.GetProdutos();
+        }
+    }
+
+    async Task CarregarResultados()
+    {
+        var resultado = await _iproductsService.GetSearchText(searchText!, paginaAtual);
+        produtos = resultado.Lista_produtos_search;
+        paginaAtual = resultado.CurrentPage;
+        totalPaginas = resultado.Pages;
+    }
+
+    async Task Anterior()
+    {
+        if (paginaAtual > 1)
+        {
+            paginaAtual--;
+            await CarregarResultados();
+        }
+    }
+
+    async Task Proxima()
+    {
+        if (paginaAtual < totalPaginas)
+        {
+            paginaAtual++;
+            await CarregarResultados();
+        }
+    }
+
+    void VerDetalhes(int id)
+    {
+        Navigation.NavigateTo($"/product/{id}");
+    }
+
+    public string GetPriceText(Produto produto)
+    {
+        var variantes = produto.productVariants;
+
+        if (variantes == null || variantes.Count == 0)
+            return "Sem variantes";
+        else if (variantes.Count == 1)
+            return $"${variantes[0].Price:F2}";
+
+        decimal minPrice = variantes.Min(v => v.Price);
+        return $"Starting at ${minPrice:F2}";
     }
 }

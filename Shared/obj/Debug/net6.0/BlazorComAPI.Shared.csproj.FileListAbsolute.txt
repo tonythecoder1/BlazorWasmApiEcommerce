@@ -5,6 +5,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.AssemblyInfoInputs.cache
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.AssemblyInfo.cs
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.csproj.CoreCompileInputs.cache
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.sourcelink.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/refint/BlazorComAPI.Shared.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/obj/Debug/net6.0/BlazorComAPI.Shared.pdb

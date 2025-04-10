@@ -4,6 +4,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Client.pdb
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Shared.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Shared.pdb
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/dotnet.6.0.36.n5pa39yhmq.js
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/dotnet.timezones.blat
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/dotnet.wasm
@@ -282,6 +283,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Client.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Linq.dll.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Net.Security.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Collections.Specialized.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Runtime.Serialization.Xml.dll.gz
@@ -403,6 +405,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/BlazorComAPI.Client.staticwebassets.runtime.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/BlazorComAPI.Client.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/BlazorComAPI.Client.pdb
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Blazored.LocalStorage.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.AspNetCore.Authorization.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.AspNetCore.Components.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Forms.dll
@@ -606,6 +609,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/BlazorComAPI.Client.AssemblyInfo.cs
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/BlazorComAPI.Client.csproj.CoreCompileInputs.cache
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/BlazorComAPI.Client.MvcApplicationPartsAssemblyInfo.cache
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/BlazorComAPI.Client.sourcelink.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/blazor.build.boot-extension.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/blazor.boot.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/staticwebassets.build.json
@@ -620,6 +624,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/scopedcss/bundle/BlazorComAPI.Client.styles.css
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/scopedcss/projectbundle/BlazorComAPI.Client.bundle.scp.css
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/zfinng97lh.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/fs9d5j3xd9.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/h5yo10sbl0.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/bx4vwrpmci.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/fbv0i1bd5c.gz

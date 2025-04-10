@@ -1,0 +1,17 @@
+@inject NavigationManager _navigationManager
+
+
+<i class="bi bi-bag-check-fill"></i>
+
+<button @onclick="GoHome" class="btn btn-outline-primary home-button"> 
+    @ChildContent  
+</button>
+
+
+@code{
+
+    [Parameter] public RenderFragment ChildContent { get; set; } // Isso é obrigatório para @ChildContent funcionar
+    private void GoHome(){
+        _navigationManager.NavigateTo("");
+    }
+}

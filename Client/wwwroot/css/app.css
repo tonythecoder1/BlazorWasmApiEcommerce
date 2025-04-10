@@ -59,6 +59,31 @@ a, .btn-link {
     color: white;
 }
 
+.cart-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cart-container a.btn {
+    width: 200px;
+    height: 40px;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+.cart-separator { 
+    margin: 1.5rem auto;
+    width: 80%;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+
+    

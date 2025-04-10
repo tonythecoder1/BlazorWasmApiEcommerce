@@ -26,6 +26,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Pages/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,8 +46,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdERldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Shared/CarrinhoCounter.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0NhcnJpbmhvQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Shared/HomeButton.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0hvbWVCdXR0b24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Shared/ProdutosList.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1Byb2R1dG9zTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Shared/Search.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1NlYXJjaC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Shared/SurveyPrompt.razor]

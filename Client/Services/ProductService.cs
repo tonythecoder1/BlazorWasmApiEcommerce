@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using BlazorComAPI.Shared;
+using Shared;
 
 namespace Client.Services
 {
@@ -19,7 +20,7 @@ namespace Client.Services
 
         public async Task<List<Produto>> GetProdutos()
         {
-            var result = await _http.GetFromJsonAsync<List<Produto>>("api/produto");
+            var result = await _http.GetFromJsonAsync<List<Produto>>("api/produto/featured");
             return result ?? new List<Produto>();
         }
 
@@ -35,5 +36,18 @@ namespace Client.Services
             return result ?? new Produto();
         }
 
+
+        public async Task<ProdutoSearchDTO> GetSearchText(string searchText, int page)
+{
+            var result = await _http.GetFromJsonAsync<ProdutoSearchDTO>($"api/produto/search/{searchText}/{page}");
+            return result ?? new ProdutoSearchDTO();
+        }
+
+
+        public async Task<List<string>> GetSearchTextSuggestions(string searchTextSuggestions)
+        {
+            var result = await _http.GetFromJsonAsync<List<string>>($"api/Produto/search-suggestions/{searchTextSuggestions}");
+            return result??new List<string>();
+        }
     }
 }
