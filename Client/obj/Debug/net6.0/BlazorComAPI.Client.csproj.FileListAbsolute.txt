@@ -12,6 +12,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/icudt_EFIGS.dat
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/icudt_no_CJK.dat
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Authorization.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll
@@ -32,6 +33,9 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.Extensions.Logging.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.Extensions.Options.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.Extensions.Primitives.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.IdentityModel.Logging.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.IdentityModel.Tokens.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.JSInterop.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.JSInterop.WebAssembly.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.VisualBasic.Core.dll
@@ -77,6 +81,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Globalization.Calendars.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Globalization.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Globalization.Extensions.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.IdentityModel.Tokens.Jwt.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.IO.Compression.Brotli.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.IO.Compression.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.IO.Compression.FileSystem.dll
@@ -289,6 +294,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Runtime.Serialization.Xml.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.Extensions.Configuration.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Net.WebSockets.dll.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Authorization.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Xml.XPath.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Text.Encoding.Extensions.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.IO.Pipelines.dll.gz
@@ -346,6 +352,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Threading.Channels.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Net.Quic.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Runtime.CompilerServices.VisualC.dll.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.IdentityModel.Tokens.Jwt.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Transactions.Local.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.IO.FileSystem.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.Extensions.Configuration.Abstractions.dll.gz
@@ -360,6 +367,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Net.NetworkInformation.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.Extensions.Primitives.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Text.Json.dll.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.IdentityModel.JsonWebTokens.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Diagnostics.Tracing.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Windows.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Runtime.InteropServices.dll.gz
@@ -374,6 +382,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Reflection.DispatchProxy.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Xml.Linq.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.IdentityModel.Tokens.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Diagnostics.TextWriterTraceListener.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Security.Cryptography.Csp.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.ObjectModel.dll.gz
@@ -399,6 +408,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Net.NameResolution.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.ComponentModel.Primitives.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Threading.Thread.dll.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.IdentityModel.Logging.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Formats.Asn1.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/System.Configuration.dll.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/wwwroot/_framework/icudt_EFIGS.dat.gz
@@ -408,6 +418,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Blazored.LocalStorage.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.AspNetCore.Authorization.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.AspNetCore.Components.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Authorization.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Forms.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Web.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.AspNetCore.Components.WebAssembly.dll
@@ -426,8 +437,12 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.JSInterop.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.JSInterop.WebAssembly.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/System.IO.Pipelines.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.CSharp.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/bin/Debug/net6.0/Microsoft.VisualBasic.Core.dll
@@ -627,6 +642,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/fs9d5j3xd9.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/h5yo10sbl0.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/bx4vwrpmci.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/g9qu163s4t.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/fbv0i1bd5c.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/uxpgiy3241.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/dc3b47bejf.gz
@@ -645,8 +661,12 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/3bpyr8ekpj.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/9ba6eb2hej.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/ske40nt35n.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/so52d678bx.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/zo47faoej5.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/uyf9bd321h.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/dqrz2d3unb.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/1dzv8yhzhx.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/qbjey9bc1p.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/giqen1o6xh.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/bi9bsyj3e6.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/obj/Debug/net6.0/compressed/vjna7prncj.gz

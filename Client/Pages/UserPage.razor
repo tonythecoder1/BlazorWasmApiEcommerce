@@ -1,0 +1,47 @@
+@page "/userpage"
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims
+@inject AuthenticationStateProvider AuthStateProvider
+@inject NavigationManager Navigation
+
+<PageTitle>Minha User Page</PageTitle>
+
+<AuthorizeView>
+    <Authorized>
+        <h3>Bem-vindo, @userName</h3>
+    </Authorized>
+    <NotAuthorized>
+        <h3>Você não está autenticado.</h3>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    public string userName = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity == null || !user.Identity.IsAuthenticated)
+        {
+            Navigation.NavigateTo("/login");
+            return;
+        }
+
+        userName = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value
+         ?? user.Claims.FirstOrDefault(c => c.Type == "unique_name")?.Value
+         ?? "Usuário";
+
+
+        // Remover domínio do email se existir
+        if (!string.IsNullOrEmpty(userName) && userName.Contains("@"))
+        {
+            userName = userName.Split('@')[0];
+        }
+        else
+        {
+            userName =  "Usuário";
+        }
+    }
+}

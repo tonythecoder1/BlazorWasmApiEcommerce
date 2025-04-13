@@ -18,7 +18,7 @@ namespace Client.Services
 
         public async Task<List<Categoria>> GetCategorias()
         {
-            var result = await httpClient.GetFromJsonAsync<List<Categoria>>("/api/categoria");
+            var result = await httpClient.GetFromJsonAsync<List<Categoria>>("/api/Categoria");
             return result??new List<Categoria>();
         }
     }

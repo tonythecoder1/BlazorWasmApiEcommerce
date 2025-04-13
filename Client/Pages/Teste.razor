@@ -1,0 +1,25 @@
+@page "/testelocal"
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+<h3>Teste de Local Storage</h3>
+
+<button class="btn btn-primary" @onclick="SalvarToken">Salvar</button>
+<button class="btn btn-secondary" @onclick="LerToken">Ler</button>
+
+<p>@mensagem</p>
+
+@code {
+    string mensagem = "";
+
+    private async Task SalvarToken()
+    {
+        await localStorage.SetItemAsync("authToken", "token-teste-123");
+        mensagem = "Token salvo!";
+    }
+
+    private async Task LerToken()
+    {
+        var token = await localStorage.GetItemAsStringAsync("authToken");
+        mensagem = $"Token lido: {token}";
+    }
+}

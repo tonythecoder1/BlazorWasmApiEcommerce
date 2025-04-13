@@ -1,0 +1,101 @@
+@page "/login"
+@using Shared
+@using Microsoft.AspNetCore.Components.Authorization
+@using global::Client.Services
+@using global::Shared
+@using Microsoft.AspNetCore.Components.Authorization
+@inject IAuthServiceClient _authServiceClient
+@inject AuthenticationStateProvider _authStateProvider
+@inject NavigationManager _navigationManager
+
+<PageTitle>Login</PageTitle>
+
+<h3>Login</h3>
+
+@if (!string.IsNullOrWhiteSpace(mensagem))
+{
+    <div class="alert alert-info mt-3">@mensagem</div>
+}
+
+@if (isLogado)
+{
+    <p>Bem-vindo, @userName!</p>
+}
+
+<EditForm Model="user" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Email</label>
+        <InputText @bind-Value="user.Email" class="form-control" />
+        <ValidationMessage For="@(() => user.Email)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        <InputText @bind-Value="user.Password" class="form-control" type="password" />
+        <ValidationMessage For="@(() => user.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>
+
+@code {
+    private UserLoginDTO user = new();
+    private string mensagem = "";
+    private bool isLogado = false;
+    private string userName = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await _authStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        foreach (var claim in user.Claims)
+        {
+            Console.WriteLine($"CLAIM: {claim.Type} = {claim.Value}");
+        }
+
+        if (user.Identity != null && user.Identity.IsAuthenticated)
+        {
+            userName = user.Identity?.Name ?? "Usuário autenticado";
+
+        }
+    }
+
+
+
+    private async Task HandleLogin()
+    {
+        mensagem = "Tentando logar...";
+
+        var result = await _authServiceClient.LoginUser(user);
+
+        if (result.Contains("sucesso", StringComparison.OrdinalIgnoreCase))
+        {
+            mensagem = result;
+
+            // Aguarda atualização do AuthenticationState
+            await Task.Delay(300);
+
+            var authState = await _authStateProvider.GetAuthenticationStateAsync();
+            var userClaims = authState.User;
+
+            if (userClaims.Identity is not null && userClaims.Identity.IsAuthenticated)
+            {
+                isLogado = true;
+                userName = userClaims.Identity.Name ?? "Usuário autenticado";
+
+                // Debug opcional
+                Console.WriteLine($"UserName: {userName}");
+
+                _navigationManager.NavigateTo("/userpage");
+            }
+        }
+        else
+        {
+            mensagem = result;
+        }
+    }
+}

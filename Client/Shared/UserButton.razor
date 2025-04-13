@@ -1,0 +1,79 @@
+<div class="dropdown" tabindex="0" @onfocusout="HideUserMenu" style="position: relative;">
+    <button @onclick="ToogleUserMenu" 
+            class="btn btn-secondary dropdown-toggle user-button">
+        <i class="oi oi-person"></i>
+    </button>
+
+    <div class="dropdown-menu @UserMenuCssClass" style="position: absolute;">
+        <a href="/register" class="dropdown-item">Register</a>
+        <a href="/login" class="dropdown-item">Login</a>
+    </div>
+</div>
+
+
+@code{
+    private bool showUserMenu = false;
+    private string UserMenuCssClass => showUserMenu ? "show":null;
+
+    private void ToogleUserMenu(){
+        showUserMenu = !showUserMenu;
+    }
+
+    private async Task HideUserMenu(){
+        await Task.Delay(100);
+        showUserMenu = false;
+    }
+
+}
+
+
+<style>
+
+
+/* Contêiner do dropdown */
+.dropdown {
+    display: flex;
+    justify-content: center;   /* Alinha o conteúdo horizontalmente no centro */
+    align-items: center;       /* Alinha o conteúdo verticalmente no centro */
+    height: 100px;             /* Ajuste a altura conforme o seu layout */
+    position: relative;
+}
+
+/* Estilo do botão */
+.user-button {
+    background-color: coral;
+    opacity: 90%;
+    border: coral;
+    color: white;
+    padding: 12px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    height: 35px;              /* Ajuste a altura do botão */
+    width: 200px;               /* Ajuste a largura do botão */
+}
+
+/* Efeito ao passar o mouse */
+.user-button:hover {
+    background-color: coral;
+    opacity: 70%;
+}
+
+/* Estilo para o caret */
+.dropdown-caret {
+    font-size: 0.8rem;
+}
+
+
+
+.dropdown-menu.show {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    left: 50px; /* ou ajuste conforme seu layout */
+    top: 0;
+}
+
+</style>

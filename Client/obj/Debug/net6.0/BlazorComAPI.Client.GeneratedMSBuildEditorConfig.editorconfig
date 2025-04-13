@@ -42,8 +42,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Pages/ProductDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdERldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Pages/Teste.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGVzdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Pages/UserPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlclBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Shared/CarrinhoCounter.razor]
@@ -64,6 +80,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/Shared/UserButton.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1VzZXJCdXR0b24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/_Imports.razor]

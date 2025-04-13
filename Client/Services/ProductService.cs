@@ -20,14 +20,36 @@ namespace Client.Services
 
         public async Task<List<Produto>> GetProdutos()
         {
-            var result = await _http.GetFromJsonAsync<List<Produto>>("api/produto/featured");
-            return result ?? new List<Produto>();
+            try
+            {
+                var response = await _http.GetAsync("api/Produto/featured");
+                var content = await response.Content.ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine($"Erro HTTP ({response.StatusCode}): {content}");
+                    return new List<Produto>();
+                }
+
+                return System.Text.Json.JsonSerializer.Deserialize<List<Produto>>(content, new System.Text.Json.JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                }) ?? new List<Produto>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao obter produtos: {ex.Message}");
+                return new List<Produto>();
+            }
         }
+
+
+
 
         public async Task<List<Produto>> GetProdutosByCategoria(string categoriaName)
         {
-             var result = await _http.GetFromJsonAsync<List<Produto>>($"api/produto/por-categoria/{categoriaName}");
-             return result??new List<Produto>();
+            var result = await _http.GetFromJsonAsync<List<Produto>>($"api/produto/por-categoria/{categoriaName}");
+            return result ?? new List<Produto>();
         }
 
         public async Task<Produto> GetProdutosById(int productId)
@@ -38,7 +60,7 @@ namespace Client.Services
 
 
         public async Task<ProdutoSearchDTO> GetSearchText(string searchText, int page)
-{
+        {
             var result = await _http.GetFromJsonAsync<ProdutoSearchDTO>($"api/produto/search/{searchText}/{page}");
             return result ?? new ProdutoSearchDTO();
         }
@@ -47,7 +69,7 @@ namespace Client.Services
         public async Task<List<string>> GetSearchTextSuggestions(string searchTextSuggestions)
         {
             var result = await _http.GetFromJsonAsync<List<string>>($"api/Produto/search-suggestions/{searchTextSuggestions}");
-            return result??new List<string>();
+            return result ?? new List<string>();
         }
     }
 }
