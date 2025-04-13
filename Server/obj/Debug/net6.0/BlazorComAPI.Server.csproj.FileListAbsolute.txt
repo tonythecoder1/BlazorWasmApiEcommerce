@@ -15,6 +15,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/BlazorComAPI.Server.pdb
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Blazored.LocalStorage.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Humanizer.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.AspNetCore.Authorization.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.AspNetCore.Components.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.AspNetCore.Components.Forms.dll
@@ -34,6 +35,11 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.JSInterop.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.JSInterop.WebAssembly.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Microsoft.OpenApi.dll
@@ -43,6 +49,7 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/System.IO.Pipelines.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/BlazorComAPI.Client.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/bin/Debug/net6.0/BlazorComAPI.Shared.dll

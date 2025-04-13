@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BlazorComAPI.Shared;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shared;
 
@@ -18,6 +20,7 @@ namespace Server.Data
         public DbSet<Categoria> Categorias_TBL { get; set; } = null!;
         public DbSet<ProductVariant> ProdutoVariante_TBL { get; set; } = null!;
         public DbSet<ProductType> ProductType_TBL { get; set; } = null!;
+        public DbSet<MyUser> myUsers_TBL { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder model)
         {
@@ -42,6 +45,23 @@ namespace Server.Data
                 new ProductType { Id = 3, Name = "Tamanho Médio" },
                 new ProductType { Id = 4, Name = "Tamanho Grande" }
             );
+
+            var hasher = new PasswordHasher<MyUser>();
+
+            var user1 = new MyUser
+            { 
+                Id = Guid.NewGuid().ToString(),
+                UserName = "teste",
+                NormalizedUserName = "TESTE",
+                Email = "teste@teste",
+                NormalizedEmail = "TESTE@TESTE",
+                EmailConfirmed = true,
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+
+            user1.PasswordHash = hasher.HashPassword(user1, "Teste123");
+            
+            model.Entity<MyUser>().HasData(user1);
 
             // Categorias
             model.Entity<Categoria>().HasData(
