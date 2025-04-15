@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ykq1vSJKWt8=",
+  "dgSpecHash": "D7qie7b8KGA=",
   "success": true,
-  "projectFilePath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/BlazorComAPI.Client.csproj",
+  "projectFilePath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj",
   "expectedPackageFiles": [
     "/Users/antonyferreira/.nuget/packages/blazored.localstorage/4.5.0/blazored.localstorage.4.5.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.authorization/6.0.7/microsoft.aspnetcore.authorization.6.0.7.nupkg.sha512",
@@ -34,9 +34,9 @@
     "/Users/antonyferreira/.nuget/packages/microsoft.identitymodel.tokens/6.5.0/microsoft.identitymodel.tokens.6.5.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.jsinterop/6.0.7/microsoft.jsinterop.6.0.7.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.jsinterop.webassembly/6.0.7/microsoft.jsinterop.webassembly.6.0.7.nupkg.sha512",
-    "/Users/antonyferreira/.nuget/packages/microsoft.net.illink.analyzers/7.0.100-1.23401.1/microsoft.net.illink.analyzers.7.0.100-1.23401.1.nupkg.sha512",
-    "/Users/antonyferreira/.nuget/packages/microsoft.net.illink.tasks/7.0.100-1.23401.1/microsoft.net.illink.tasks.7.0.100-1.23401.1.nupkg.sha512",
-    "/Users/antonyferreira/.nuget/packages/microsoft.net.sdk.webassembly.pack/8.0.14/microsoft.net.sdk.webassembly.pack.8.0.14.nupkg.sha512",
+    "/Users/antonyferreira/.nuget/packages/microsoft.net.illink.analyzers/7.0.100-1.23211.1/microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+    "/Users/antonyferreira/.nuget/packages/microsoft.net.illink.tasks/7.0.100-1.23211.1/microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
+    "/Users/antonyferreira/.nuget/packages/microsoft.net.sdk.webassembly.pack/9.0.4/microsoft.net.sdk.webassembly.pack.9.0.4.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/system.identitymodel.tokens.jwt/6.5.0/system.identitymodel.tokens.jwt.6.5.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/system.io.pipelines/6.0.3/system.io.pipelines.6.0.3.nupkg.sha512",
@@ -44,16 +44,16 @@
     "/Users/antonyferreira/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/system.text.json/6.0.0/system.text.json.6.0.0.nupkg.sha512",
-    "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
     "/Users/antonyferreira/.nuget/packages/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "/Users/antonyferreira/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/6.0.36/microsoft.netcore.app.runtime.mono.browser-wasm.6.0.36.nupkg.sha512"
+    "/Users/antonyferreira/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/6.0.36/microsoft.netcore.app.runtime.mono.browser-wasm.6.0.36.nupkg.sha512",
+    "/Users/antonyferreira/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "BlazorComAPI.Client depends on System.IdentityModel.Tokens.Jwt (>= 6.0.0) but System.IdentityModel.Tokens.Jwt 6.0.0 was not found. An approximate best match of System.IdentityModel.Tokens.Jwt 6.5.0 was resolved.",
+      "message": "BlazorComAPI.Client depends on System.IdentityModel.Tokens.Jwt (>= 6.0.0) but System.IdentityModel.Tokens.Jwt 6.0.0 was not found. System.IdentityModel.Tokens.Jwt 6.5.0 was resolved instead.",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net6.0",

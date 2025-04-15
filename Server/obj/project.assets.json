@@ -2457,11 +2457,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/BlazorComAPI.Server.csproj",
+      "projectUniqueName": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Server/BlazorComAPI.Server.csproj",
       "projectName": "BlazorComAPI.Server",
-      "projectPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/BlazorComAPI.Server.csproj",
+      "projectPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Server/BlazorComAPI.Server.csproj",
       "packagesPath": "/Users/antonyferreira/.nuget/packages/",
-      "outputPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Server/obj/",
+      "outputPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Server/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/antonyferreira/.nuget/NuGet/NuGet.Config"
@@ -2477,11 +2477,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/BlazorComAPI.Client.csproj": {
-              "projectPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Client/BlazorComAPI.Client.csproj"
+            "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj": {
+              "projectPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj"
             },
-            "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/BlazorComAPI.Shared.csproj": {
-              "projectPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorComAPI/Shared/BlazorComAPI.Shared.csproj"
+            "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj": {
+              "projectPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj"
             }
           }
         }
@@ -2495,7 +2495,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net6.0": {
@@ -2573,7 +2574,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.407/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.203/RuntimeIdentifierGraph.json"
       }
     }
   },

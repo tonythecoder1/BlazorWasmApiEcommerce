@@ -1,79 +1,109 @@
+@using Blazored.LocalStorage
+@using Microsoft.AspNetCore.Components.Authorization
+@using global::Client
+@inject NavigationManager _navigationManager
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject ILocalStorageService _localStorage
+
 <div class="dropdown" tabindex="0" @onfocusout="HideUserMenu" style="position: relative;">
-    <button @onclick="ToogleUserMenu" 
-            class="btn btn-secondary dropdown-toggle user-button">
+    <button @onclick="ToogleUserMenu" class="btn btn-secondary dropdown-toggle user-button">
         <i class="oi oi-person"></i>
     </button>
 
     <div class="dropdown-menu @UserMenuCssClass" style="position: absolute;">
-        <a href="/register" class="dropdown-item">Register</a>
-        <a href="/login" class="dropdown-item">Login</a>
+        <AuthorizeView>
+            <Authorized>
+                <button class="dropdown-item" @onclick="Logout">Logout</button>
+            </Authorized>
+            <NotAuthorized>
+                <a href="/register" class="dropdown-item">Register</a>
+                <a href="/login" class="dropdown-item">Login</a>
+            </NotAuthorized>
+        </AuthorizeView>
     </div>
 </div>
 
 
-@code{
-    private bool showUserMenu = false;
-    private string UserMenuCssClass => showUserMenu ? "show":null;
+@code {
 
-    private void ToogleUserMenu(){
+    private CustomAuthState CustomAuth => (CustomAuthState)_authenticationStateProvider;
+
+    private bool showUserMenu = false;
+    private string UserMenuCssClass => showUserMenu ? "show" : null;
+
+    private void ToogleUserMenu()
+    {
         showUserMenu = !showUserMenu;
     }
 
-    private async Task HideUserMenu(){
+    private async Task HideUserMenu()
+    {
         await Task.Delay(100);
         showUserMenu = false;
+    }
+
+    private async Task Logout()
+    {
+        await _localStorage.RemoveItemAsync("authToken");
+        await _authenticationStateProvider.GetAuthenticationStateAsync();
+        CustomAuth.NotifyUserLogout();
+        _navigationManager.NavigateTo("/");
+
     }
 
 }
 
 
 <style>
+    /* Contêiner do dropdown */
+    .dropdown {
+        display: flex;
+        justify-content: center;
+        /* Alinha o conteúdo horizontalmente no centro */
+        align-items: center;
+        /* Alinha o conteúdo verticalmente no centro */
+        height: 100px;
+        /* Ajuste a altura conforme o seu layout */
+        position: relative;
+    }
 
+    /* Estilo do botão */
+    .user-button {
+        background-color: coral;
+        opacity: 90%;
+        border: coral;
+    using Client.Shared;
 
-/* Contêiner do dropdown */
-.dropdown {
-    display: flex;
-    justify-content: center;   /* Alinha o conteúdo horizontalmente no centro */
-    align-items: center;       /* Alinha o conteúdo verticalmente no centro */
-    height: 100px;             /* Ajuste a altura conforme o seu layout */
-    position: relative;
-}
-
-/* Estilo do botão */
-.user-button {
-    background-color: coral;
-    opacity: 90%;
-    border: coral;
-    color: white;
-    padding: 12px 12px;
-    display: flex;
-    justify-content: center;
+#line default
+#line hidden
+#nullable disable
     align-items: center;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    height: 35px;              /* Ajuste a altura do botão */
-    width: 200px;               /* Ajuste a largura do botão */
-}
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        height: 35px;
+        /* Ajuste a altura do botão */
+        width: 200px;
+        /* Ajuste a largura do botão */
+    }
 
-/* Efeito ao passar o mouse */
-.user-button:hover {
-    background-color: coral;
-    opacity: 70%;
-}
+    using Client;
 
-/* Estilo para o caret */
-.dropdown-caret {
-    font-size: 0.8rem;
-}
+    #line default using Microsoft.AspNetCore.Components.Authorization;
 
+    #line default using Blazored.LocalStorage;
+
+    #line default #line hidden #nullable disable stilo para o caret */ .dropdown-caret {
+        font-size: 0.8rem;
+    }
 
 
-.dropdown-menu.show {
-    display: block;
-    position: absolute;
-    z-index: 1000;
-    left: 50px; /* ou ajuste conforme seu layout */
-    top: 0;
-}
 
+    .dropdown-menu.show {
+        display: block;
+        position: absolute;
+        z-index: 1000;
+        left: 50px;
+        /* ou ajuste conforme seu layout */
+        top: 0;
+    }
 </style>
