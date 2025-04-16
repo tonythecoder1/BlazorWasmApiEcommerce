@@ -3,6 +3,7 @@
 @using Server.Services
 @using global::Client.Services
 @using global::Shared
+@using System.Globalization
 @inject ICartServiceClient _ICartService
 @inject IProductService _IProductServiceClient
 
@@ -52,11 +53,11 @@ else
                     @if (selectedVariant.OriginalPrice > selectedVariant.Price)
                     {
                         <p class="text-muted" style="text-decoration: line-through;">
-                            <i class="bi bi-currency-euro"></i>@selectedVariant.OriginalPrice
+                            @selectedVariant.OriginalPrice.ToString("C", new CultureInfo("pt-PT"))
                         </p>
                     }
-                    <p><strong>Preço:</strong> 
-                    <i class="bi bi-currency-euro"/> @selectedVariant.Price </p> 
+                    <p><strong>Prix:</strong> 
+                    @selectedVariant.Price.ToString("C", new CultureInfo("pt-PT")) </p> 
                 </div>
             }
             <button class="btn btn-primary" @onclick="AddToCart">

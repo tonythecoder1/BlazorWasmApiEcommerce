@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -14,13 +15,16 @@ namespace Client.Services
         private readonly ILocalStorageService _localStorageService;
         private readonly AuthenticationStateProvider _authenticationStateProvider;
 
-        public AuthServiceClient(HttpClient httpClient, ILocalStorageService localStorageService,
+        public AuthServiceClient(IHttpClientFactory httpClientFactory, ILocalStorageService localStorageService,
             AuthenticationStateProvider authenticationStateProvider)
         {
-            _httpClient = httpClient;
+            _httpClient = httpClientFactory.CreateClient("API");
             _localStorageService = localStorageService;
             _authenticationStateProvider = authenticationStateProvider;
         }
+
+
+
 
         public async Task<string> Register(RegisterDTO userDto)
         {
@@ -44,12 +48,6 @@ namespace Client.Services
             await _localStorageService.SetItemAsStringAsync("authToken", cleanedToken);
             Console.WriteLine("Token salvo no LocalStorage!");
 
-            var teste = await _localStorageService.GetItemAsStringAsync("authToken");
-            Console.WriteLine($"Token no localStorage após salvar = {teste}");
-
-            // Definir header Authorization do HttpClient
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", cleanedToken);
-
             // Atualizar estado de autenticação
             if (_authenticationStateProvider is CustomAuthState customAuth)
             {
@@ -57,13 +55,40 @@ namespace Client.Services
                 await Task.Delay(100); // Pequena pausa para garantir atualização do estado (opcional)
             }
 
-            Console.WriteLine($"TOKEN = {cleanedToken}");
-
-            var check = await _localStorageService.GetItemAsStringAsync("authToken");
-            Console.WriteLine($"[DEBUG] Token no LocalStorage FINAL = {check}");
-
-
             return "Login com sucesso!";
         }
+
+
+        public async Task<bool> ChangePassword(UserChangePassword model)
+        {
+            var response = await _httpClient.PostAsJsonAsync("api/auth/change", model);
+
+            if (response.IsSuccessStatusCode)
+            {
+                try
+                {
+                    var result = await response.Content.ReadFromJsonAsync<bool>();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    var raw = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Erro ao fazer parse do JSON: {ex.Message}");
+                    Console.WriteLine($"Conteúdo bruto: {raw}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Erro HTTP: {response.StatusCode}");
+                var erro = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Detalhe: {erro}");
+            }
+
+            return false;
+        }
+
+
+
+
     }
 }

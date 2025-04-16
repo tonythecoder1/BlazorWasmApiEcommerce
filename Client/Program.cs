@@ -17,8 +17,16 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddAuthorizationCore();
 
 builder.Services.AddBlazoredLocalStorage();
-builder.Services.AddScoped(sp => 
-    new HttpClient { BaseAddress = new Uri("https://localhost:7140") });
+builder.Services.AddTransient<AuthHeaderHandler>();
+
+builder.Services.AddHttpClient("API", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7140");
+}).AddHttpMessageHandler<AuthHeaderHandler>();
+
+builder.Services.AddScoped(sp =>
+    sp.GetRequiredService<IHttpClientFactory>().CreateClient("API"));
+
 
 builder.Services.AddScoped<IProductService, ProductService>();
 

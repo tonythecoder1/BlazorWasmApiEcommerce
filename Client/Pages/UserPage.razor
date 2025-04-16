@@ -1,25 +1,44 @@
 @page "/userpage"
+@using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
 @using System.Security.Claims
+@using global::Client.Services
+@using global::Shared
 @inject AuthenticationStateProvider AuthStateProvider
 @inject NavigationManager Navigation
+@inject IAuthServiceClient _authClient;
+@attribute [Authorize]
 
-<PageTitle>Minha User Page</PageTitle>
-
-<AuthorizeView>
+<AuthorizeView Context="auth">
     <Authorized>
-        <h3>Bem-vindo, @userName</h3>
+        <h3>Bienvenue @userName</h3>
+        <EditForm Model="newPasswordUser" OnValidSubmit="ChangePassword">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="mb-3">
+                <label>Password</label>
+                <InputText @bind-Value="newPasswordUser.Password" class="form-control" />
+                <ValidationMessage For="@(() => newPasswordUser.Password)" />
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Change Password</button>
+        </EditForm>
+
     </Authorized>
     <NotAuthorized>
-        <h3>Você não está autenticado.</h3>
+        <h3>Vous n'êtes pas authentifié..</h3>
     </NotAuthorized>
 </AuthorizeView>
 
 @code {
     public string userName = string.Empty;
+    public UserChangePassword newPasswordUser = new UserChangePassword();
 
     protected override async Task OnInitializedAsync()
     {
+
         var authState = await AuthStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
@@ -30,8 +49,8 @@
         }
 
         userName = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value
-         ?? user.Claims.FirstOrDefault(c => c.Type == "unique_name")?.Value
-         ?? "Usuário";
+        ?? user.Claims.FirstOrDefault(c => c.Type == "unique_name")?.Value
+        ?? "Usuário";
 
 
         // Remover domínio do email se existir
@@ -41,7 +60,23 @@
         }
         else
         {
-            userName =  "Usuário";
+            userName = "Usuário";
         }
     }
+
+    private async Task ChangePassword()
+    {
+        var result = await _authClient.ChangePassword(newPasswordUser);
+
+        if (result)
+        {
+            Console.WriteLine("Password Changed");
+        }
+        else
+        {
+            Console.WriteLine("Password Not Changed");
+        }
+    }
+
+
 }

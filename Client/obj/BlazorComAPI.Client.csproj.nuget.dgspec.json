@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj": {}
+    "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj": {}
   },
   "projects": {
-    "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj": {
+    "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj",
+        "projectUniqueName": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj",
         "projectName": "BlazorComAPI.Client",
-        "projectPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj",
+        "projectPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj",
         "packagesPath": "/Users/antonyferreira/.nuget/packages/",
-        "outputPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/obj/",
+        "outputPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/antonyferreira/.nuget/NuGet/NuGet.Config"
@@ -27,8 +27,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj": {
-                "projectPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj"
+              "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj": {
+                "projectPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj"
               }
             }
           }
@@ -65,6 +65,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.7, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.NET.ILLink.Analyzers": {
               "suppressParent": "All",
@@ -128,14 +132,14 @@
         }
       }
     },
-    "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj": {
+    "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj",
+        "projectUniqueName": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj",
         "projectName": "BlazorComAPI.Shared",
-        "projectPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj",
+        "projectPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj",
         "packagesPath": "/Users/antonyferreira/.nuget/packages/",
-        "outputPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/obj/",
+        "outputPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/antonyferreira/.nuget/NuGet/NuGet.Config"

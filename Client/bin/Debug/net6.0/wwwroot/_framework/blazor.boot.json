@@ -1,7 +1,7 @@
 {
   "entryAssembly": "BlazorComAPI.Client",
   "resources": {
-    "hash": "sha256-S3I9SAsNxZiYgq9Nhmo7aGhkCEiv/aWyy47kk2gWbDQ=",
+    "hash": "sha256-Ajvpeoi/syrqn96rWhYTgMRGR4Va3cSfd02F1Pz4ADg=",
     "runtime": {
       "dotnet.js": "sha256-pu7MO47B6So4jcW6iY2UI11lBZYz2EQnJKiYNsOpNJg=",
       "dotnet.timezones.blat": "sha256-vrFYQt55a4tGoDGoyRfjjGa1nSecx646RK78iTzPWCM=",
@@ -30,6 +30,7 @@
       "Microsoft.Extensions.FileProviders.Abstractions.dll": "sha256-7PzvEcQvpK1c8tTX9VPI8AF+XrekqbAytNBQXJjvTvQ=",
       "Microsoft.Extensions.FileProviders.Physical.dll": "sha256-sXujvGMZDgBBZ9HqfcEq9XsM0pvwyhPt60NA9qLDzGI=",
       "Microsoft.Extensions.FileSystemGlobbing.dll": "sha256-viiXOG0fwhWobT0TQ1ZOJiZBdRvYRlWbDtjz+6d8sQI=",
+      "Microsoft.Extensions.Http.dll": "sha256-K5/O91dt69IHKav69ftn+7DKPmnzkipTvwM4Sd4Zres=",
       "Microsoft.Extensions.Logging.dll": "sha256-GDZQCBtVHfrZZ6fL95lGoinLeUWLjQShLbfESwO7mrc=",
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-w+c+xfLh8QIAwluhugyPc8sPvAmmIC/UTxnugT7Oido=",
       "Microsoft.Extensions.Options.dll": "sha256-eGESyy9mRu8RcCGajAu4E8nxSmeB5nxiZkFPVaZ5Vl0=",
@@ -207,12 +208,12 @@
       "mscorlib.dll": "sha256-FHccFgM8rcGOQ8oacA4eEgiiOynHayVKyd2ICq3Bo4w=",
       "netstandard.dll": "sha256-D91viTBgwuzeuIOx1KgBYnoY0hl2IpcBu/zr22Fu0BU=",
       "System.Private.CoreLib.dll": "sha256-5FbWgChEgLPlYByi8VsHTisbCpgMNSbf95JK5dVOs50=",
-      "BlazorComAPI.Shared.dll": "sha256-MOgAA+gzSvRkj4VcfK03Ud2GRZet0A6ua4LMHJMbN9M=",
-      "BlazorComAPI.Client.dll": "sha256-Kn7hZDrkGvHS8EqwcaSFZYesMDLtv/BP+kt/XHqRdvk="
+      "BlazorComAPI.Shared.dll": "sha256-utTLs4Ms1+z+OPCIEaEp81WskV/xpQrP9yUjq1r2Fq0=",
+      "BlazorComAPI.Client.dll": "sha256-CFUmi5tBEzffS34mZxLeYeFu4ZGtxl8HKtZQouVObYY="
     },
     "pdb": {
-      "BlazorComAPI.Shared.pdb": "sha256-Wi5Hc5jJq2M10EG//AIbLB3XDzkqEJIgBg/h41OPaV4=",
-      "BlazorComAPI.Client.pdb": "sha256-ysIhg1tRPdrD/gpsCIEm44RBJrwg/gRmQTF27xg4wzE="
+      "BlazorComAPI.Shared.pdb": "sha256-eiWlN794XHNR0RhngJl92rcSMKmoZSgZl3VL3wsP4K0=",
+      "BlazorComAPI.Client.pdb": "sha256-HMuDU3Blvllit564e8P8x5xsSDFtLXUe+FNXVb9kbCI="
     },
     "runtimeAssets": {
       "dotnet.wasm": {

@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shared;
 
+// ...
+
 namespace Server.Data
 {
-    public class DbContextServer : DbContext
+    public class DbContextServer : IdentityDbContext<MyUser>
     {
         public DbContextServer(DbContextOptions<DbContextServer> options) : base(options)
         {
@@ -20,14 +22,13 @@ namespace Server.Data
         public DbSet<Categoria> Categorias_TBL { get; set; } = null!;
         public DbSet<ProductVariant> ProdutoVariante_TBL { get; set; } = null!;
         public DbSet<ProductType> ProductType_TBL { get; set; } = null!;
-        public DbSet<MyUser> myUsers_TBL { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder model)
         {
             base.OnModelCreating(model);
 
-            model.Entity<ProductVariant>()   //Tabela de Juncao com chave Composta
-                .HasKey(p => new { p.ProductId, p.ProductTypeId }); //chave primária composta tabela de juncao
+            model.Entity<ProductVariant>()   // Table de jonction avec clé composite
+                .HasKey(p => new { p.ProductId, p.ProductTypeId }); // Clé primaire composite
 
             model.Entity<ProductVariant>()
                  .HasOne(p => p.produto_nav)
@@ -40,44 +41,27 @@ namespace Server.Data
                   .HasForeignKey(p => p.ProductTypeId);
 
             model.Entity<ProductType>().HasData(
-                new ProductType { Id = 1, Name = "Padrão" },
-                new ProductType { Id = 2, Name = "Tamanho Pequeno" },
-                new ProductType { Id = 3, Name = "Tamanho Médio" },
-                new ProductType { Id = 4, Name = "Tamanho Grande" }
+                new ProductType { Id = 1, Name = "Standard" },
+                new ProductType { Id = 2, Name = "Petit format" },
+                new ProductType { Id = 3, Name = "Format moyen" },
+                new ProductType { Id = 4, Name = "Grand format" }
             );
 
-            var hasher = new PasswordHasher<MyUser>();
-
-            var user1 = new MyUser
-            {
-                Id = Guid.NewGuid().ToString(),
-                UserName = "teste",
-                NormalizedUserName = "TESTE",
-                Email = "teste@teste",
-                NormalizedEmail = "TESTE@TESTE",
-                EmailConfirmed = true,
-                SecurityStamp = Guid.NewGuid().ToString()
-            };
-
-            user1.PasswordHash = hasher.HashPassword(user1, "Teste123");
-
-            model.Entity<MyUser>().HasData(user1);
-
-            // Categorias
+            // Catégories
             model.Entity<Categoria>().HasData(
-                new Categoria { Id = 1, Name = "Books", Url = "books" },
-                new Categoria { Id = 2, Name = "Movies", Url = "movies" },
-                new Categoria { Id = 3, Name = "Video Games", Url = "video-games" },
+                new Categoria { Id = 1, Name = "Livres", Url = "books" },
+                new Categoria { Id = 2, Name = "Films", Url = "movies" },
+                new Categoria { Id = 3, Name = "Jeux vidéo", Url = "video-games" },
                 new Categoria { Id = 4, Name = "Périphériques", Url = "peripheriques" }
             );
 
-            // Produtos
+            // Produits
             model.Entity<Produto>().HasData(
                 new Produto
                 {
                     Id = 1,
-                    Title = "Teclado Mecânico",
-                    Description = "Teclado com switches azuis",
+                    Title = "Clavier mécanique",
+                    Description = "Clavier avec interrupteurs bleus",
                     ImageUrl = "https://via.placeholder.com/150",
                     CategoriaId = 4,
                     featured = true
@@ -85,8 +69,8 @@ namespace Server.Data
                 new Produto
                 {
                     Id = 2,
-                    Title = "Rato Gamer",
-                    Description = "Mouse com DPI ajustável e LED RGB",
+                    Title = "Souris gamer",
+                    Description = "Souris avec DPI ajustable et LED RGB",
                     ImageUrl = "https://via.placeholder.com/150",
                     CategoriaId = 4,
                     featured = false
@@ -94,8 +78,8 @@ namespace Server.Data
                 new Produto
                 {
                     Id = 3,
-                    Title = "Livro: Clean Code",
-                    Description = "Um guia de boas práticas de programação por Robert C. Martin.",
+                    Title = "Livre : Clean Code",
+                    Description = "Un guide de bonnes pratiques de programmation par Robert C. Martin.",
                     ImageUrl = "https://via.placeholder.com/150",
                     CategoriaId = 1,
                     featured = false
@@ -103,17 +87,17 @@ namespace Server.Data
                 new Produto
                 {
                     Id = 4,
-                    Title = "Livro: Domain-Driven Design",
-                    Description = "Aborda modelagem de software baseada em domínio.",
+                    Title = "Livre : Domain-Driven Design",
+                    Description = "Traite de la modélisation logicielle orientée domaine.",
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 2,
+                    CategoriaId = 1,
                     featured = false
                 },
                 new Produto
                 {
                     Id = 5,
-                    Title = "Filme: Inception",
-                    Description = "Um thriller de ficção científica dirigido por Christopher Nolan.",
+                    Title = "Film : Inception",
+                    Description = "Un thriller de science-fiction réalisé par Christopher Nolan.",
                     ImageUrl = "https://via.placeholder.com/150",
                     CategoriaId = 2,
                     featured = true
@@ -121,8 +105,8 @@ namespace Server.Data
                 new Produto
                 {
                     Id = 6,
-                    Title = "Filme: Interstellar",
-                    Description = "Exploração espacial para salvar a humanidade.",
+                    Title = "Film : Interstellar",
+                    Description = "Exploration spatiale pour sauver l’humanité.",
                     ImageUrl = "https://via.placeholder.com/150",
                     CategoriaId = 2,
                     featured = true
@@ -130,8 +114,8 @@ namespace Server.Data
                 new Produto
                 {
                     Id = 7,
-                    Title = "Jogo: The Witcher 3",
-                    Description = "RPG de mundo aberto com narrativa envolvente.",
+                    Title = "Jeu : The Witcher 3",
+                    Description = "RPG en monde ouvert avec une narration immersive.",
                     ImageUrl = "https://via.placeholder.com/150",
                     CategoriaId = 3,
                     featured = true
@@ -139,8 +123,8 @@ namespace Server.Data
                 new Produto
                 {
                     Id = 8,
-                    Title = "God of War",
-                    Description = "Kratos em sua jornada épica no mundo nórdico.",
+                    Title = "God of War Ragnarok",
+                    Description = "Kratos dans son aventure épique au cœur de la mythologie nordique.",
                     ImageUrl = "https://via.placeholder.com/150",
                     CategoriaId = 3,
                     featured = true
@@ -152,7 +136,7 @@ namespace Server.Data
                 {
                     ProductId = 1,
                     ProductTypeId = 1,
-                    Name = "Teclado Padrão",
+                    Name = "Clavier Standard",
                     Price = 99.99m,
                     OriginalPrice = 149.99m
                 },
@@ -160,7 +144,7 @@ namespace Server.Data
                 {
                     ProductId = 1,
                     ProductTypeId = 3,
-                    Name = "Teclado Médio",
+                    Name = "Clavier Moyen",
                     Price = 109.99m,
                     OriginalPrice = 159.99m
                 },
@@ -168,19 +152,19 @@ namespace Server.Data
                 {
                     ProductId = 2,
                     ProductTypeId = 2,
-                    Name = "Rato Pequeno",
+                    Name = "Souris Petite",
                     Price = 59.99m,
                     OriginalPrice = 89.99m
                 },
-            new ProductVariant
-            {
-                ProductId = 2,
-                ProductTypeId = 4,
-                Name = "Rato Grande",
-                Price = 69.99m,
-                OriginalPrice = 99.99m
-            }
-        );
+                new ProductVariant
+                {
+                    ProductId = 2,
+                    ProductTypeId = 4,
+                    Name = "Souris Grande",
+                    Price = 69.99m,
+                    OriginalPrice = 99.99m
+                }
+            );
         }
     }
 }

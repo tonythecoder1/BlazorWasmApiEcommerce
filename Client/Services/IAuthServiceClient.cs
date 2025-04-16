@@ -10,5 +10,6 @@ namespace Client.Services
     {
         public Task<string> Register(RegisterDTO userDto);
         public Task<string> LoginUser(UserLoginDTO userLoginDTO);
+        public Task<bool> ChangePassword(UserChangePassword password);
     }
 }

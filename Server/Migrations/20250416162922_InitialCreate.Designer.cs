@@ -11,8 +11,8 @@ using Server.Data;
 namespace BlazorComAPI.Server.Migrations
 {
     [DbContext(typeof(DbContextServer))]
-    [Migration("20250410224516_SeedUser")]
-    partial class SeedUser
+    [Migration("20250416162922_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,134 @@ namespace BlazorComAPI.Server.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.28")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
 
             modelBuilder.Entity("ProductVariant", b =>
                 {
@@ -50,7 +178,7 @@ namespace BlazorComAPI.Server.Migrations
                         {
                             ProductId = 1,
                             ProductTypeId = 1,
-                            Name = "Teclado Padrão",
+                            Name = "Clavier Standard",
                             OriginalPrice = 149.99m,
                             Price = 99.99m
                         },
@@ -58,7 +186,7 @@ namespace BlazorComAPI.Server.Migrations
                         {
                             ProductId = 1,
                             ProductTypeId = 3,
-                            Name = "Teclado Médio",
+                            Name = "Clavier Moyen",
                             OriginalPrice = 159.99m,
                             Price = 109.99m
                         },
@@ -66,7 +194,7 @@ namespace BlazorComAPI.Server.Migrations
                         {
                             ProductId = 2,
                             ProductTypeId = 2,
-                            Name = "Rato Pequeno",
+                            Name = "Souris Petite",
                             OriginalPrice = 89.99m,
                             Price = 59.99m
                         },
@@ -74,7 +202,7 @@ namespace BlazorComAPI.Server.Migrations
                         {
                             ProductId = 2,
                             ProductTypeId = 4,
-                            Name = "Rato Grande",
+                            Name = "Souris Grande",
                             OriginalPrice = 99.99m,
                             Price = 69.99m
                         });
@@ -114,71 +242,71 @@ namespace BlazorComAPI.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CategoriaId = 2,
-                            Description = "Teclado com switches azuis",
+                            CategoriaId = 4,
+                            Description = "Clavier avec interrupteurs bleus",
                             ImageUrl = "https://via.placeholder.com/150",
-                            Title = "Teclado Mecânico",
+                            Title = "Clavier mécanique",
                             featured = true
                         },
                         new
                         {
                             Id = 2,
-                            CategoriaId = 2,
-                            Description = "Mouse com DPI ajustável e LED RGB",
+                            CategoriaId = 4,
+                            Description = "Souris avec DPI ajustable et LED RGB",
                             ImageUrl = "https://via.placeholder.com/150",
-                            Title = "Rato Gamer",
+                            Title = "Souris gamer",
                             featured = false
                         },
                         new
                         {
                             Id = 3,
                             CategoriaId = 1,
-                            Description = "Um guia de boas práticas de programação por Robert C. Martin.",
+                            Description = "Un guide de bonnes pratiques de programmation par Robert C. Martin.",
                             ImageUrl = "https://via.placeholder.com/150",
-                            Title = "Livro: Clean Code",
+                            Title = "Livre : Clean Code",
                             featured = false
                         },
                         new
                         {
                             Id = 4,
                             CategoriaId = 1,
-                            Description = "Aborda modelagem de software baseada em domínio.",
+                            Description = "Traite de la modélisation logicielle orientée domaine.",
                             ImageUrl = "https://via.placeholder.com/150",
-                            Title = "Livro: Domain-Driven Design",
+                            Title = "Livre : Domain-Driven Design",
                             featured = false
                         },
                         new
                         {
                             Id = 5,
                             CategoriaId = 2,
-                            Description = "Um thriller de ficção científica dirigido por Christopher Nolan.",
+                            Description = "Un thriller de science-fiction réalisé par Christopher Nolan.",
                             ImageUrl = "https://via.placeholder.com/150",
-                            Title = "Filme: Inception",
+                            Title = "Film : Inception",
                             featured = true
                         },
                         new
                         {
                             Id = 6,
                             CategoriaId = 2,
-                            Description = "Exploração espacial para salvar a humanidade.",
+                            Description = "Exploration spatiale pour sauver l’humanité.",
                             ImageUrl = "https://via.placeholder.com/150",
-                            Title = "Filme: Interstellar",
+                            Title = "Film : Interstellar",
                             featured = true
                         },
                         new
                         {
                             Id = 7,
                             CategoriaId = 3,
-                            Description = "RPG de mundo aberto com narrativa envolvente.",
+                            Description = "RPG en monde ouvert avec une narration immersive.",
                             ImageUrl = "https://via.placeholder.com/150",
-                            Title = "Jogo: The Witcher 3",
+                            Title = "Jeu : The Witcher 3",
                             featured = true
                         },
                         new
                         {
                             Id = 8,
                             CategoriaId = 3,
-                            Description = "Kratos em sua jornada épica no mundo nórdico.",
+                            Description = "Kratos dans son aventure épique au cœur de la mythologie nordique.",
                             ImageUrl = "https://via.placeholder.com/150",
                             Title = "God of War",
                             featured = true
@@ -207,20 +335,26 @@ namespace BlazorComAPI.Server.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Books",
+                            Name = "Livres",
                             Url = "books"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Movies",
+                            Name = "Films",
                             Url = "movies"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Video Games",
+                            Name = "Jeux vidéo",
                             Url = "video-games"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Périphériques",
+                            Url = "peripheriques"
                         });
                 });
 
@@ -233,10 +367,12 @@ namespace BlazorComAPI.Server.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
@@ -248,10 +384,12 @@ namespace BlazorComAPI.Server.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("longtext");
@@ -269,29 +407,19 @@ namespace BlazorComAPI.Server.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("myUsers_TBL");
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = "ccabe77c-760f-4a9b-a2ad-ee411f654e21",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "0b4e1d8d-8ed7-46c5-8bf1-51107acdeee1",
-                            Email = "teste@teste",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "TESTE@TESTE",
-                            NormalizedUserName = "TESTE",
-                            PasswordHash = "AQAAAAEAACcQAAAAEO8QSc8WAlW1r1W23NFmLprRAH+JOPAiGms6JuyOH3ew05FlpqHnwc+GkjBdpCK5jQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "04c89e2e-828b-4edc-9aec-7e33a2d2a28f",
-                            TwoFactorEnabled = false,
-                            UserName = "teste"
-                        });
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("Shared.ProductType", b =>
@@ -312,23 +440,74 @@ namespace BlazorComAPI.Server.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Padrão"
+                            Name = "Standard"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Tamanho Pequeno"
+                            Name = "Petit format"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Tamanho Médio"
+                            Name = "Format moyen"
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Tamanho Grande"
+                            Name = "Grand format"
                         });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Shared.MyUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Shared.MyUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Shared.MyUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Shared.MyUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProductVariant", b =>

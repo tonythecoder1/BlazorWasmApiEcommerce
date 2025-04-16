@@ -24,7 +24,7 @@ namespace Client.Services
 
         public async Task AddCart(CardItem cardItem)
         {
-            var carrinho = await _localStorageService.GetItemAsync<List<CardItem>>("cart");  //criamos com a chave cart
+            var carrinho = await _localStorageService.GetItemAsync<List<CardItem>>("cart");  
 
             if(carrinho == null){
                 carrinho = new List<CardItem>();

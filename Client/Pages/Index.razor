@@ -8,26 +8,26 @@
 
 @if (!string.IsNullOrEmpty(categoryUrl))
 {
-    <h3 class="mt-4 mb-3">Categoria: @categoryUrl</h3>
+    <h3 class="mt-4 mb-3">Catégorie : @categoryUrl</h3>
     searchText = null;
 }
 else if (!string.IsNullOrEmpty(searchText))
 {
-    <h3 class="mt-4 mb-3">Resultados para "@searchText"</h3>
+    <h3 class="mt-4 mb-3">Résultats pour "@searchText"</h3>
 }
 else
 {
-    <h3 class="mt-4 mb-3">Top Produtos</h3>
+    <h3 class="mt-4 mb-3">Meilleurs produits</h3>
     searchText = null;
 }
 
 @if (produtos is null)
 {
-    <p>🔄 Carregando produtos...</p>
+    <p>🔄 Chargement des produits...</p>
 }
 else if (produtos.Count == 0)
 {
-    <p>⚠️ Nenhum produto encontrado para esta categoria.</p>
+    <p>⚠️ Aucun produit trouvé pour cette catégorie.</p>
 }
 else
 {
@@ -46,11 +46,11 @@ else
                         <p class="card-text">@GetPriceText(item)</p>
                     </div>
                     <div class="card-footer text-muted">
-                        <small>Produto da categoria: @categoryUrl</small>
+                        <small>Produit de la catégorie : @categoryUrl</small>
                     </div>
                     <div class="p-2">
                         <button class="btn btn-primary" @onclick="() => VerDetalhes(item.Id)">
-                            Ver detalhes
+                            Voir les détails
                         </button>
                     </div>
                 </div>
@@ -64,13 +64,13 @@ else
         <nav class="mt-4">
             <ul class="pagination justify-content-center">
                 <li class="page-item @(paginaAtual == 1 ? "disabled" : "")">
-                    <button class="page-link" @onclick="Anterior">Anterior</button>
+                    <button class="page-link" @onclick="Anterior">Précédent</button>
                 </li>
                 <li class="page-item disabled">
-                    <span class="page-link">Página @paginaAtual de @totalPaginas</span>
+                    <span class="page-link">Page @paginaAtual de @totalPaginas</span>
                 </li>
                 <li class="page-item @(paginaAtual == totalPaginas ? "disabled" : "")">
-                    <button class="page-link" @onclick="Proxima">Próxima</button>
+                    <button class="page-link" @onclick="Proxima">Suivante</button>
                 </li>
             </ul>
         </nav>
@@ -138,13 +138,14 @@ else
     public string GetPriceText(Produto produto)
     {
         var variantes = produto.productVariants;
+        var cultura = new System.Globalization.CultureInfo("pt-PT");
 
         if (variantes == null || variantes.Count == 0)
-            return "Sem variantes";
+            return "Sans variantes";
         else if (variantes.Count == 1)
-            return $"${variantes[0].Price:F2}";
+            return $"{variantes[0].Price.ToString("C", cultura)}";
 
         decimal minPrice = variantes.Min(v => v.Price);
-        return $"Starting at ${minPrice:F2}";
+        return $"À partir de {minPrice.ToString("C", cultura)}";
     }
 }

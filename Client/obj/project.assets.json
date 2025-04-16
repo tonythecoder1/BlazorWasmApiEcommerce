@@ -340,6 +340,25 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "Microsoft.Extensions.Http/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Logging/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -985,6 +1004,25 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Http/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Logging/6.0.0": {
@@ -1838,6 +1876,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Http/6.0.0": {
+      "sha512": "15+pa2G0bAMHbHewaQIdr/y6ag2H3yh4rd9hTXavtWDzQBkvpe2RMqFg8BxDpcQWssmjmBApGPcw93QRz6YcMg==",
+      "type": "package",
+      "path": "microsoft.extensions.http/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Http.dll",
+        "lib/net461/Microsoft.Extensions.Http.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.6.0.0.nupkg.sha512",
+        "microsoft.extensions.http.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Extensions.Logging/6.0.0": {
       "sha512": "eIbyj40QDg1NDz0HBW0S5f3wrLVnKWnDJ/JtZ+yJDFnDj90VoPuoPmFkeaXrtu+0cKm5GRAwoDf+dBWXK0TUdg==",
       "type": "package",
@@ -2376,6 +2433,7 @@
       "Microsoft.AspNetCore.Components.Authorization >= 6.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.7",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.7",
+      "Microsoft.Extensions.Http >= 6.0.0",
       "Microsoft.NET.ILLink.Analyzers >= 7.0.100-1.23211.1",
       "Microsoft.NET.ILLink.Tasks >= 7.0.100-1.23211.1",
       "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.4",
@@ -2388,11 +2446,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj",
+      "projectUniqueName": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj",
       "projectName": "BlazorComAPI.Client",
-      "projectPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj",
+      "projectPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/BlazorComAPI.Client.csproj",
       "packagesPath": "/Users/antonyferreira/.nuget/packages/",
-      "outputPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Client/obj/",
+      "outputPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/antonyferreira/.nuget/NuGet/NuGet.Config"
@@ -2408,8 +2466,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj": {
-              "projectPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj"
+            "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj": {
+              "projectPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj"
             }
           }
         }
@@ -2446,6 +2504,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.7, )"
+          },
+          "Microsoft.Extensions.Http": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           },
           "Microsoft.NET.ILLink.Analyzers": {
             "suppressParent": "All",

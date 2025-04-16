@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj",
+      "projectUniqueName": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj",
       "projectName": "BlazorComAPI.Shared",
-      "projectPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj",
+      "projectPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/BlazorComAPI.Shared.csproj",
       "packagesPath": "/Users/antonyferreira/.nuget/packages/",
-      "outputPath": "/Users/antonyferreira/Documents/projetoo/BlazorWasmApiEcommerce/Shared/obj/",
+      "outputPath": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Shared/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/antonyferreira/.nuget/NuGet/NuGet.Config"
