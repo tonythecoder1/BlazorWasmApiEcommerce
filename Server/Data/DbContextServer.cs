@@ -49,7 +49,7 @@ namespace Server.Data
             var hasher = new PasswordHasher<MyUser>();
 
             var user1 = new MyUser
-            { 
+            {
                 Id = Guid.NewGuid().ToString(),
                 UserName = "teste",
                 NormalizedUserName = "TESTE",
@@ -60,14 +60,15 @@ namespace Server.Data
             };
 
             user1.PasswordHash = hasher.HashPassword(user1, "Teste123");
-            
+
             model.Entity<MyUser>().HasData(user1);
 
             // Categorias
             model.Entity<Categoria>().HasData(
                 new Categoria { Id = 1, Name = "Books", Url = "books" },
                 new Categoria { Id = 2, Name = "Movies", Url = "movies" },
-                new Categoria { Id = 3, Name = "Video Games", Url = "video-games" }
+                new Categoria { Id = 3, Name = "Video Games", Url = "video-games" },
+                new Categoria { Id = 4, Name = "Périphériques", Url = "peripheriques" }
             );
 
             // Produtos
@@ -78,7 +79,7 @@ namespace Server.Data
                     Title = "Teclado Mecânico",
                     Description = "Teclado com switches azuis",
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 2,
+                    CategoriaId = 4,
                     featured = true
                 },
                 new Produto
@@ -87,7 +88,7 @@ namespace Server.Data
                     Title = "Rato Gamer",
                     Description = "Mouse com DPI ajustável e LED RGB",
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 2,
+                    CategoriaId = 4,
                     featured = false
                 },
                 new Produto
@@ -105,7 +106,7 @@ namespace Server.Data
                     Title = "Livro: Domain-Driven Design",
                     Description = "Aborda modelagem de software baseada em domínio.",
                     ImageUrl = "https://via.placeholder.com/150",
-                    CategoriaId = 1,
+                    CategoriaId = 2,
                     featured = false
                 },
                 new Produto

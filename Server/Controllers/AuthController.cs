@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Server.Services;
 using Shared;
@@ -9,14 +12,15 @@ using Shared;
 namespace Server.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/auth")]
     public class AuthController : ControllerBase
     {
         protected IAuthService _authService;
-
-        public AuthController(IAuthService authService)
+        protected UserManager<MyUser> _userManager;
+        public AuthController(IAuthService authService, UserManager<MyUser> userManager)
         {
             this._authService = authService;
+            this._userManager = userManager;
         }
 
         [HttpPost("register")]
@@ -41,18 +45,38 @@ namespace Server.Controllers
             }
 
         }
-        
+
         //api/auth/login
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] UserLoginDTO userLoginDTO){
+        public async Task<IActionResult> Login([FromBody] UserLoginDTO userLoginDTO)
+        {
             var result = await _authService.LoginUser(userLoginDTO);
 
-            if(result == null){
+            if (result == null)
+            {
                 return Unauthorized("Email ou senha invalidos");
             }
 
             return Ok(result);
         }
+        
+        [HttpPost("change")]
+        public async Task<ActionResult<bool>> ChangePassword([FromBody] UserChangePassword userDto)
+        {
+            var userId = User.FindFirstValue("nameid");
+
+            if (userId == null)
+            {
+                return Unauthorized();
+            }
+
+            var result = await _authService.ChangePassword(userId, userDto.Password);
+
+            // Retorne explicitamente como JSON
+            return new JsonResult(result) { ContentType = "application/json" };
+        }
+
+
 
     }
 }

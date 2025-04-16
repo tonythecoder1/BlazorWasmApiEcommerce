@@ -95,11 +95,25 @@ namespace Server.Services
 
         {
 
-            if(await _userManager.FindByEmailAsync(Email) != null){
+            if (await _userManager.FindByEmailAsync(Email) != null)
+            {
                 return true;
-            } 
+            }
 
             return false;
         }
+
+        public async Task<bool> ChangePassword(string userId, string newPassword)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+                return false;
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
+
+            return result.Succeeded;
+        }
+
     }
 }
