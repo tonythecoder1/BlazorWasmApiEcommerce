@@ -41,7 +41,7 @@ else
 
         <div class="cart-total">
             <span>Total (@lista_Produto_Dto.Count):</span>
-            <strong><i class="bi bi-currency-euro"></i> @lista_Produto_Dto.Sum(p => p.Price).ToString("F2")</strong>
+            <strong><i class="bi bi-currency-euro"></i> @lista_Produto_Dto.Sum(p => p.Price * p.Quantidade).ToString("F2") </strong>
         </div>
     </div>
 }
