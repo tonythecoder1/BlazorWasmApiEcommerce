@@ -11,8 +11,8 @@ using Server.Data;
 namespace BlazorComAPI.Server.Migrations
 {
     [DbContext(typeof(DbContextServer))]
-    [Migration("20250416162922_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250418033648_ChangeUserIdToStringInCardItems")]
+    partial class ChangeUserIdToStringInCardItems
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -308,9 +308,28 @@ namespace BlazorComAPI.Server.Migrations
                             CategoriaId = 3,
                             Description = "Kratos dans son aventure épique au cœur de la mythologie nordique.",
                             ImageUrl = "https://via.placeholder.com/150",
-                            Title = "God of War",
+                            Title = "God of War Ragnarok",
                             featured = true
                         });
+                });
+
+            modelBuilder.Entity("Shared.CardItem", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "ProductId", "ProductTypeId");
+
+                    b.ToTable("CardItems_TBL");
                 });
 
             modelBuilder.Entity("Shared.Categoria", b =>

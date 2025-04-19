@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Authentication;
 using System.Threading.Tasks;
 using BlazorComAPI.Shared;
 using Microsoft.AspNetCore.Identity;
@@ -22,10 +23,14 @@ namespace Server.Data
         public DbSet<Categoria> Categorias_TBL { get; set; } = null!;
         public DbSet<ProductVariant> ProdutoVariante_TBL { get; set; } = null!;
         public DbSet<ProductType> ProductType_TBL { get; set; } = null!;
+        public DbSet<CardItem> CardItems_TBL { get; set; }
 
         protected override void OnModelCreating(ModelBuilder model)
         {
             base.OnModelCreating(model);
+
+            model.Entity<CardItem>()
+                .HasKey(ci => new {ci.UserId ,ci.ProductId, ci.ProductTypeId});
 
             model.Entity<ProductVariant>()   // Table de jonction avec clé composite
                 .HasKey(p => new { p.ProductId, p.ProductTypeId }); // Clé primaire composite

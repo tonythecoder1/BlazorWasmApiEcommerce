@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlazorComAPI.Server.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class ChangeUserIdToStringInCardItems : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -64,6 +64,22 @@ namespace BlazorComAPI.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "CardItems_TBL",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    ProductTypeId = table.Column<int>(type: "int", nullable: false),
+                    Quantidade = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CardItems_TBL", x => new { x.UserId, x.ProductId, x.ProductTypeId });
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -316,7 +332,7 @@ namespace BlazorComAPI.Server.Migrations
                     { 5, 2, "Un thriller de science-fiction réalisé par Christopher Nolan.", "https://via.placeholder.com/150", "Film : Inception", true },
                     { 6, 2, "Exploration spatiale pour sauver l’humanité.", "https://via.placeholder.com/150", "Film : Interstellar", true },
                     { 7, 3, "RPG en monde ouvert avec une narration immersive.", "https://via.placeholder.com/150", "Jeu : The Witcher 3", true },
-                    { 8, 3, "Kratos dans son aventure épique au cœur de la mythologie nordique.", "https://via.placeholder.com/150", "God of War", true }
+                    { 8, 3, "Kratos dans son aventure épique au cœur de la mythologie nordique.", "https://via.placeholder.com/150", "God of War Ragnarok", true }
                 });
 
             migrationBuilder.InsertData(
@@ -394,6 +410,9 @@ namespace BlazorComAPI.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "CardItems_TBL");
 
             migrationBuilder.DropTable(
                 name: "ProdutoVariante_TBL");
