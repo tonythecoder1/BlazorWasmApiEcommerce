@@ -2,26 +2,39 @@
 @using Server.Services
 @using global::Shared
 @inject ICartServiceClient _ICartService
-@inject ISyncLocalStorageService _LocalStorageService
+@inject ILocalStorageService _LocalStorageService
 
 <div class="cart-container">
     <a href="cart" class="btn btn-info d-flex align-items-center justify-content-center">
         <i class="oi oi-cart me-2"></i>
-        <span>@GetCartItemsCount()</span>
+        <span>@valorTotalQuantidae</span>
     </a>
 </div>
 
 
-@code{
+@code {
 
-    private int GetCartItemsCount(){
-        var cart = _LocalStorageService.GetItem<List<CardItem>>("cart");
-            
-        return cart != null ? cart.Count : 0;
+    int valorTotalQuantidae;
+
+    private async Task<int> GetCartItemsCount()
+    {
+        var cart = await _ICartService.GetCartProductsDto();
+        var total = cart.Sum(p => p.Quantidade);
+
+        return total;
     }
 
-    protected override void OnInitialized(){
-        _ICartService.OnChange += StateHasChanged;  //sempre que CartService fizer OnChange?.Invoke(), chama StateHasChanged() aqui"
+    protected override async Task OnInitializedAsync()
+    {
+        //sempre que CartService fizer OnChange?.Invoke(), chama StateHasChanged() aqui"
+        valorTotalQuantidae = await GetCartItemsCount();
+
+        //Adiciona essa função anônima à lista de ações que devem ser executadas quando OnChange?.Invoke() for chamado.
+        _ICartService.OnChange += async () =>
+        {
+            valorTotalQuantidae = await GetCartItemsCount();
+            StateHasChanged();
+        };
     }
 
-}    
+}

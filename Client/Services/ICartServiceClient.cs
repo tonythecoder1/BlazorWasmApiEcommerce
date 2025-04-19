@@ -14,6 +14,7 @@ namespace Server.Services
         Task <List<CartProductDTO>> GetCartProductsDto();
         Task RemoveItemsFromCart(int ProductId, int ProductTypeId);
         Task UpdateQuantidade(CartProductDTO productDTO);
+        Task<List<CardItem>> StoreCartItem(bool empytLocalCart);
 
     }
 }

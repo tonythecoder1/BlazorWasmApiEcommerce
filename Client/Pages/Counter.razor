@@ -1,4 +1,7 @@
 ﻿@page "/counter"
+@using Blazored.LocalStorage
+@using global::Shared
+@inject ILocalStorageService _localStorage
 
 <PageTitle>Counter</PageTitle>
 
@@ -8,8 +11,33 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+@foreach (var item in lista_cart)
+{
+    if (item.Quantidade == 1)
+    {
+        currentCount++;
+    }
+    else if (item.Quantidade > 1)
+    {
+        currentCount = currentCount + item.Quantidade;
+    } 
+}
+
 @code {
+
+
     private int currentCount = 0;
+    List<CartProductDTO> lista_cart = new List<CartProductDTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        lista_cart = await _localStorage.GetItemAsync<List<CartProductDTO>>("cart");
+    }
+
+    private void CalcularTotal(){
+        currentCount = lista_cart.Sum(item => item.Quantidade);
+    }
+
 
     private void IncrementCount()
     {

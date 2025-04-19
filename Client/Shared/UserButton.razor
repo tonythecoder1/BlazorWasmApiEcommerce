@@ -46,6 +46,7 @@
     {
         await _localStorage.RemoveItemAsync("authToken");
         await _authenticationStateProvider.GetAuthenticationStateAsync();
+        await _localStorage.RemoveItemAsync("cart");
         CustomAuth.NotifyUserLogout();
         _navigationManager.NavigateTo("/");
 

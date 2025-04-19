@@ -1,4 +1,6 @@
 @page "/login"
+@using Blazored.LocalStorage
+@using Server.Services
 @using Shared
 @using Microsoft.AspNetCore.Components.Authorization
 @using global::Client.Services
@@ -7,6 +9,9 @@
 @inject IAuthServiceClient _authServiceClient
 @inject AuthenticationStateProvider _authStateProvider
 @inject NavigationManager _navigationManager
+@inject ICartServiceClient _CartService
+@inject ILocalStorageService _localStorage
+
 
 <PageTitle>Login</PageTitle>
 
@@ -79,8 +84,26 @@
             // Aguarda atualização do AuthenticationState
             await Task.Delay(300);
 
+            var lista_cart = await _CartService.GetCartItems();
+
             var authState = await _authStateProvider.GetAuthenticationStateAsync();
+            var userId = authState.User.FindFirst("nameid")?.Value;
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                foreach (var item in lista_cart)
+                {
+                    item.UserId = userId;
+                }
+
+                await _localStorage.SetItemAsync("cart", lista_cart);
+
+            }
+
+            await _CartService.StoreCartItem(true);
+
             var userClaims = authState.User;
+
 
             if (userClaims.Identity is not null && userClaims.Identity.IsAuthenticated)
             {

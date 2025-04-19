@@ -7,6 +7,7 @@ namespace Shared
 {
     public class CardItem
     {
+        public string? UserId {get; set;}
         public int ProductId { get; set; }
         public int ProductTypeId { get; set; }
         public int Quantidade { get; set; } = 1;

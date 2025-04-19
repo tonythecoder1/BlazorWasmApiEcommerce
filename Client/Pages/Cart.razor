@@ -163,6 +163,7 @@ else
     private async Task RemoveProduct(int ProductId, int ProductTypeId)
     {
         await _ICartService.RemoveItemsFromCart(ProductId, ProductTypeId);
+        lista_Produto_Dto = await _ICartService.GetCartProductsDto();
         StateHasChanged();
     }
 
