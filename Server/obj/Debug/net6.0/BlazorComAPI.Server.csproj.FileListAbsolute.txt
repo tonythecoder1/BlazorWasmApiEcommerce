@@ -174,9 +174,8 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/BlazorComAPI.Server.RazorAssemblyInfo.cache
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/BlazorComAPI.Server.RazorAssemblyInfo.cs
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/BlazorComAPI.Server.sourcelink.json
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/BlazorComAPI.Server.dll
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/refint/BlazorComAPI.Server.dll
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/BlazorComAPI.Server.pdb
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorComAPI.Client.staticwebassets.runtime.json
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorComAPI.Client.staticwebassets.endpoints.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/appsettings.Development.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/appsettings.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorDebugProxy/BrowserDebugHost.dll
@@ -185,8 +184,6 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorDebugProxy/Microsoft.CodeAnalysis.CSharp.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorDebugProxy/Microsoft.CodeAnalysis.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorDebugProxy/Newtonsoft.Json.dll
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorComAPI.Client.staticwebassets.runtime.json
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorComAPI.Client.staticwebassets.endpoints.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorComAPI.Server.staticwebassets.runtime.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorComAPI.Server.staticwebassets.endpoints.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/bin/Debug/net6.0/BlazorComAPI.Server
@@ -247,5 +244,8 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.BlazorComAPI.Server.props
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/staticwebassets.pack.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/BlazorCo.1A3367B9.Up2Date
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/BlazorComAPI.Server.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/refint/BlazorComAPI.Server.dll
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/BlazorComAPI.Server.pdb
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/BlazorComAPI.Server.genruntimeconfig.cache
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Server/obj/Debug/net6.0/ref/BlazorComAPI.Server.dll

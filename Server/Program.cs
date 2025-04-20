@@ -45,7 +45,7 @@ builder.Services.AddIdentityCore<MyUser>(options =>
 
 
 // Autenticação JWT
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)  //Recebe o Token do Front se for valido HttpContext.User
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
@@ -60,6 +60,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthorization();
 
 var app = builder.Build();

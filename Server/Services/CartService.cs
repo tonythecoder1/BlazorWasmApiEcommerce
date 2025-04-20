@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Server.Data;
 using Shared;
@@ -12,10 +15,31 @@ namespace Server.Services
     public class CartService : ICartService
     {
         protected readonly DbContextServer _dbContext;
-        public CartService(DbContextServer dbContext)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public CartService(DbContextServer dbContext, IHttpContextAccessor httpContextAccessor)
         {
             this._dbContext = dbContext;
+            this._httpContextAccessor = httpContextAccessor;
         }
+
+
+        public string GetUserId()
+        {
+            return _httpContextAccessor.HttpContext.User.FindFirst("nameid")?.Value;
+        }
+
+        public async Task<int> GetCartItemsDTOCounter()
+        {
+            var userId = GetUserId();
+            Console.WriteLine("➡️ User ID: " + userId);
+            var count = await _dbContext.CardItems_TBL
+                                    .Where(u => u.UserId == userId)
+                                    .SumAsync(u => u.Quantidade);
+
+            return count;
+        }
+
         public async Task<List<CartProductDTO>> GetCartProductsAsync(List<CardItem> cardItems) //Converte os itens em CartProductDTO:
         {
             var result = new List<CartProductDTO>();
@@ -59,28 +83,73 @@ namespace Server.Services
             return result;
         }
 
-        public async Task<List<CartProductDTO>> StoreCartItems(List<CardItem> cardItems, string UserId)
+        public async Task<List<CartProductDTO>> StoreCartItems(List<CardItem> cardItems)
         {
-            // Adiciona o UserId em todos os itens
-            cardItems.ForEach(cardItem => cardItem.UserId = UserId);
-
-            // Log para debug
-            foreach (var item in cardItems)
-            {
-                Console.WriteLine($"📦 Enviando item: ProductId={item.ProductId}, Tipo={item.ProductTypeId}, UserId={item.UserId}");
-            }
-
-            // Salva os itens no banco
+            cardItems.ForEach(carti => carti.UserId = GetUserId());
             _dbContext.CardItems_TBL.AddRange(cardItems);
             await _dbContext.SaveChangesAsync();
 
-            // Retorna os dados para exibir no carrinho
-            var savedItems = await _dbContext.CardItems_TBL
-                .Where(c => c.UserId == UserId)
-                .ToListAsync();
-
-            return await GetCartProductsAsync(savedItems);
+            return await GetCartProductDTOs();
         }
 
+        public async Task<List<CartProductDTO>> GetCartProductDTOs()
+        {
+            var userId = GetUserId();
+            List<CardItem> lista_items = await _dbContext.CardItems_TBL.Where(c => c.UserId == userId).ToListAsync();
+            return await GetCartProductsAsync(lista_items);
+        }
+
+        public async Task<bool> AddToCart(CardItem cardItem)
+        {
+            cardItem.UserId = GetUserId();
+
+            var sameItem = await _dbContext.CardItems_TBL.FirstOrDefaultAsync(c =>
+                            c.ProductId == cardItem.ProductId && c.ProductTypeId == cardItem.ProductTypeId && c.UserId == cardItem.UserId);
+
+            if (sameItem == null)
+            {
+                _dbContext.CardItems_TBL.Add(cardItem);
+            }
+            else
+            {
+                sameItem.Quantidade += cardItem.Quantidade; //adicionamos a quantidade ja existente
+            }
+
+            await _dbContext.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> UpdateCart(CardItem cardItem)
+        {
+            var exitentItem = await _dbContext.CardItems_TBL.FirstOrDefaultAsync(c => c.ProductId == cardItem.ProductId &&
+                c.ProductTypeId == cardItem.ProductTypeId && c.UserId == GetUserId());
+
+            if (exitentItem == null)
+            {
+                return false;
+            }
+
+            exitentItem.Quantidade = cardItem.Quantidade;
+            await _dbContext.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> RemoveItemFromCart(int productId, int ProductTypeId)
+        {
+            var result = await _dbContext.CardItems_TBL.FirstOrDefaultAsync(c =>
+                c.ProductId == productId && c.ProductTypeId == ProductTypeId && c.UserId == GetUserId());
+
+            if (result != null)
+            {
+                _dbContext.CardItems_TBL.Remove(result);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            
+            return false;
+
+        }
     }
 }

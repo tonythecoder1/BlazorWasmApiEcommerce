@@ -23,7 +23,7 @@ namespace Server.Controllers
             _cartService = cartService;
         }
 
-        
+
         [AllowAnonymous]
         [HttpPost("products")]
         public async Task<ActionResult<List<CartProductDTO>>> GetCartProduct([FromBody] List<CardItem> lista_items)
@@ -42,22 +42,10 @@ namespace Server.Controllers
         [HttpPost("store")]
         public async Task<ActionResult<List<CartProductDTO>>> StoreCartItems([FromBody] List<CardItem> lista_items)
         {
-            var userIdClaim = User.FindFirst("nameid")?.Value;
-
-            if (string.IsNullOrEmpty(userIdClaim))
-            {
-                return Unauthorized("Usuário não autenticado.");
-            }
-
-            if (lista_items == null || !lista_items.Any())
-            {
-                return BadRequest("A lista de itens do carrinho está vazia.");
-            }
 
             try
             {
-
-                var result = await _cartService.StoreCartItems(lista_items, userIdClaim);
+                var result = await _cartService.StoreCartItems(lista_items);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -65,6 +53,52 @@ namespace Server.Controllers
                 // Log opcional aqui
                 return StatusCode(500, $"Erro ao armazenar o carrinho: {ex.Message}");
             }
+        }
+
+        [HttpGet("count")]
+        public async Task<ActionResult<int>> GetCartCount()
+        {
+            return await _cartService.GetCartItemsDTOCounter();
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<CartProductDTO>>> GetDbCartProducts()
+        {
+            var result = await _cartService.GetCartProductDTOs();
+            return Ok(result);
+        }
+
+        [HttpPost("add")]
+        public async Task<ActionResult<bool>> AddToCartDb(CardItem listaCartItem)
+        {
+            var result = await _cartService.AddToCart(listaCartItem);
+
+            if (!result)
+            {
+                return BadRequest("Nao foi possivel adicionar no carrinho");
+            }
+
+            return Ok(result);
+        }
+
+        [HttpPut("update-quantity")]
+        public async Task<ActionResult<bool>> UpdateCartQuantity(CardItem listaCartItem)
+        {
+            var result = await _cartService.UpdateCart(listaCartItem);
+
+            if (!result)
+            {
+                return BadRequest("Nao foi possivel atulizar a quantidade no carrinho");
+            }
+
+            return Ok(result);
+        }
+
+        [HttpDelete("{productId}/{productTypeId}")]
+        public async Task<ActionResult> DeleteCartItem(int productId, int productTypeId)
+        {
+            var result = await _cartService.RemoveItemFromCart(productId, productTypeId);
+            return Ok(result);
         }
 
     }
