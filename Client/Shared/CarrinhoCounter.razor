@@ -4,6 +4,9 @@
 @inject ICartServiceClient _ICartService
 @inject ILocalStorageService _LocalStorageService
 
+@inject ICartServiceClient _cartService
+@inject ILocalStorageService _localStorage
+
 <div class="cart-container">
     <a href="cart" class="btn btn-info d-flex align-items-center justify-content-center">
         <i class="oi oi-cart me-2"></i>
@@ -11,30 +14,29 @@
     </a>
 </div>
 
-
 @code {
-
-    int valorTotalQuantidae;
-
-    private async Task<int> GetCartItemsCount()
-    {
-        var cart = await _ICartService.GetCartProductsDto();
-        var total = cart.Sum(p => p.Quantidade);
-
-        return total;
-    }
+    int valorTotalQuantidae = 0;
 
     protected override async Task OnInitializedAsync()
     {
-        //sempre que CartService fizer OnChange?.Invoke(), chama StateHasChanged() aqui"
-        valorTotalQuantidae = await GetCartItemsCount();
+        // Primeiro carregamento
+        valorTotalQuantidae = await _localStorage.GetItemAsync<int>("cartItemsCount");
 
-        //Adiciona essa função anônima à lista de ações que devem ser executadas quando OnChange?.Invoke() for chamado.
-        _ICartService.OnChange += async () =>
-        {
-            valorTotalQuantidae = await GetCartItemsCount();
-            StateHasChanged();
-        };
+        // Escuta alterações futuras
+        _cartService.OnChange += AtualizarContador;
     }
 
+    private async void AtualizarContador()
+    {
+        valorTotalQuantidae = await _localStorage.GetItemAsync<int>("cartItemsCount");
+        StateHasChanged(); // força renderização
+    }
+
+    // Limpando inscrição do evento se necessário (bom pra produção)
+    public void Dispose()
+    {
+        _cartService.OnChange -= AtualizarContador;
+    }
 }
+
+

@@ -1,9 +1,11 @@
 @using Blazored.LocalStorage
 @using Microsoft.AspNetCore.Components.Authorization
+@using Server.Services
 @using global::Client
 @inject NavigationManager _navigationManager
 @inject AuthenticationStateProvider _authenticationStateProvider
 @inject ILocalStorageService _localStorage
+@inject ICartServiceClient _CartService
 
 <div class="dropdown" tabindex="0" @onfocusout="HideUserMenu" style="position: relative;">
     <button @onclick="ToogleUserMenu" class="btn btn-secondary dropdown-toggle user-button">
@@ -26,10 +28,20 @@
 
 @code {
 
-    private CustomAuthState CustomAuth => (CustomAuthState)_authenticationStateProvider;
+    private CustomAuthState CustomAuth => _authenticationStateProvider as CustomAuthState;
+
 
     private bool showUserMenu = false;
     private string UserMenuCssClass => showUserMenu ? "show" : null;
+
+    protected override void OnInitialized()
+    {
+        _authenticationStateProvider.AuthenticationStateChanged += async (_) =>
+        {
+            await InvokeAsync(StateHasChanged);
+        };
+    }
+
 
     private void ToogleUserMenu()
     {
@@ -46,8 +58,12 @@
     {
         await _localStorage.RemoveItemAsync("authToken");
         await _authenticationStateProvider.GetAuthenticationStateAsync();
+        CustomAuth?.NotifyUserLogout();
+        await _localStorage.RemoveItemAsync("cartProducts");
+        await _localStorage.RemoveItemAsync("cartItemsCount");
         await _localStorage.RemoveItemAsync("cart");
-        CustomAuth.NotifyUserLogout();
+        await _CartService.GetCartItemsCount();
+        _CartService.NotificarMudancaDoCarrinho();
         _navigationManager.NavigateTo("/");
 
     }
@@ -56,55 +72,66 @@
 
 
 <style>
-    /* Contêiner do dropdown */
+    /* Container do dropdown */
     .dropdown {
         display: flex;
         justify-content: center;
-        /* Alinha o conteúdo horizontalmente no centro */
         align-items: center;
-        /* Alinha o conteúdo verticalmente no centro */
         height: 100px;
-        /* Ajuste a altura conforme o seu layout */
         position: relative;
     }
 
-    /* Estilo do botão */
+    /* Estilo do botão do usuário */
     .user-button {
+        height: 35px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: coral;
-        opacity: 90%;
-        border: coral;
-    using Client.Shared;
-
-#line default
-#line hidden
-#nullable disable
-    align-items: center;
+        color: white;
+        border: none;
+        border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.2s ease-in-out;
-        height: 35px;
-        /* Ajuste a altura do botão */
-        width: 200px;
-        /* Ajuste a largura do botão */
     }
 
-    using Client;
-
-    #line default using Microsoft.AspNetCore.Components.Authorization;
-
-    #line default using Blazored.LocalStorage;
-
-    #line default #line hidden #nullable disable stilo para o caret */ .dropdown-caret {
+    /* Estilo do caret (ícone pequeno, se quiser usar) */
+    .dropdown-caret {
         font-size: 0.8rem;
     }
 
-
-
-    .dropdown-menu.show {
-        display: block;
+    /* Menu de dropdown */
+    .dropdown-menu {
+        display: none;
         position: absolute;
         z-index: 1000;
-        left: 50px;
-        /* ou ajuste conforme seu layout */
-        top: 0;
+        top: 100%;
+        left: 0;
+        min-width: 160px;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+    }
+
+    /* Quando está visível */
+    .dropdown-menu.show {
+        display: block;
+    }
+
+    /* Estilo dos itens do menu */
+    .dropdown-menu .dropdown-item {
+        background-color: transparent;
+        border: none;
+        color: #333;
+        padding: 8px 12px;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #f0f0f0;
     }
 </style>

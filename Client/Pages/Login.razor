@@ -5,13 +5,11 @@
 @using Microsoft.AspNetCore.Components.Authorization
 @using global::Client.Services
 @using global::Shared
-@using Microsoft.AspNetCore.Components.Authorization
 @inject IAuthServiceClient _authServiceClient
 @inject AuthenticationStateProvider _authStateProvider
 @inject NavigationManager _navigationManager
 @inject ICartServiceClient _CartService
 @inject ILocalStorageService _localStorage
-
 
 <PageTitle>Login</PageTitle>
 
@@ -65,11 +63,8 @@
         if (user.Identity != null && user.Identity.IsAuthenticated)
         {
             userName = user.Identity?.Name ?? "Usuário autenticado";
-
         }
     }
-
-
 
     private async Task HandleLogin()
     {
@@ -81,36 +76,21 @@
         {
             mensagem = result;
 
-            // Aguarda atualização do AuthenticationState
+            // Espera um pouco pra garantir que a autenticação atualizou
             await Task.Delay(300);
 
-            var lista_cart = await _CartService.GetCartItems();
-
             var authState = await _authStateProvider.GetAuthenticationStateAsync();
-            var userId = authState.User.FindFirst("nameid")?.Value;
-
-            if (!string.IsNullOrEmpty(userId))
-            {
-                foreach (var item in lista_cart)
-                {
-                    item.UserId = userId;
-                }
-
-                await _localStorage.SetItemAsync("cart", lista_cart);
-
-            }
-
-            await _CartService.StoreCartItem(true);
-
             var userClaims = authState.User;
-
 
             if (userClaims.Identity is not null && userClaims.Identity.IsAuthenticated)
             {
                 isLogado = true;
                 userName = userClaims.Identity.Name ?? "Usuário autenticado";
 
-                // Debug opcional
+                // Associa os itens do carrinho local ao UserId e envia para o backend
+                await _CartService.StoreCartItem(true); // envia e esvazia o localStorage se for sucesso
+                await _CartService.GetCartItemsCount(); // atualiza o contador do carrinho
+
                 Console.WriteLine($"UserName: {userName}");
 
                 _navigationManager.NavigateTo("/userpage");
