@@ -240,7 +240,7 @@ namespace Client.Services
             }
             else
             {
-                var cart = await _localStorageService.GetItemAsync<List<CardItem>>("cart");
+                var cart = await _localStorageService.GetItemAsync<List<CardItem>>("cart") ?? new List<CardItem>();
                 var count = cart.Sum(x => x.Quantidade);
                 await _localStorageService.SetItemAsync("cartItemsCount", count);
             }

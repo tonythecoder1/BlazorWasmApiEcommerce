@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Authentication;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using BlazorComAPI.Shared;
 using Microsoft.AspNetCore.Identity;
@@ -19,18 +20,29 @@ namespace Server.Data
         {
         }
 
+        public DbSet<Order> Orders_TBL { get; set; }
+        public DbSet<OrderItem> OrderItems_TBL { get; set; }
         public DbSet<Produto> Produtos_TBL { get; set; } = null!;
         public DbSet<Categoria> Categorias_TBL { get; set; } = null!;
         public DbSet<ProductVariant> ProdutoVariante_TBL { get; set; } = null!;
         public DbSet<ProductType> ProductType_TBL { get; set; } = null!;
         public DbSet<CardItem> CardItems_TBL { get; set; }
 
+
         protected override void OnModelCreating(ModelBuilder model)
         {
             base.OnModelCreating(model);
 
+            model.Entity<Order>()
+               .HasMany(o => o.OrderItems)  // Um Order TEM MUITOS OrderItems
+               .WithOne(o => o.Order)       // Cada OrderItem TEM UM Order
+               .HasForeignKey(o => o.OrderId);
+
+            model.Entity<OrderItem>()
+                .HasKey(oi => new { oi.OrderId, oi.ProductId, oi.ProductTypeId });
+
             model.Entity<CardItem>()
-                .HasKey(ci => new {ci.UserId ,ci.ProductId, ci.ProductTypeId});
+                .HasKey(ci => new { ci.UserId, ci.ProductId, ci.ProductTypeId });
 
             model.Entity<ProductVariant>()   // Table de jonction avec clé composite
                 .HasKey(p => new { p.ProductId, p.ProductTypeId }); // Clé primaire composite
@@ -44,6 +56,10 @@ namespace Server.Data
                   .HasOne(p => p.productType)
                   .WithMany(p => p.ProductVariants)
                   .HasForeignKey(p => p.ProductTypeId);
+
+
+
+
 
             model.Entity<ProductType>().HasData(
                 new ProductType { Id = 1, Name = "Standard" },
@@ -59,6 +75,7 @@ namespace Server.Data
                 new Categoria { Id = 3, Name = "Jeux vidéo", Url = "video-games" },
                 new Categoria { Id = 4, Name = "Périphériques", Url = "peripheriques" }
             );
+
 
             // Produits
             model.Entity<Produto>().HasData(

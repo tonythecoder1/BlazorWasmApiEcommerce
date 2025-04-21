@@ -439,6 +439,53 @@ namespace BlazorComAPI.Server.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Shared.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders_TBL");
+                });
+
+            modelBuilder.Entity("Shared.OrderItem", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPreco")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.HasKey("OrderId", "ProductId", "ProductTypeId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("ProductTypeId");
+
+                    b.ToTable("OrderItems_TBL");
+                });
+
             modelBuilder.Entity("Shared.ProductType", b =>
                 {
                     b.Property<int>("Id")
@@ -557,6 +604,33 @@ namespace BlazorComAPI.Server.Migrations
                     b.Navigation("categoria");
                 });
 
+            modelBuilder.Entity("Shared.OrderItem", b =>
+                {
+                    b.HasOne("Shared.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Produto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Shared.ProductType", "ProductType")
+                        .WithMany()
+                        .HasForeignKey("ProductTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("ProductType");
+
+                    b.Navigation("Produto");
+                });
+
             modelBuilder.Entity("Produto", b =>
                 {
                     b.Navigation("productVariants");
@@ -565,6 +639,11 @@ namespace BlazorComAPI.Server.Migrations
             modelBuilder.Entity("Shared.Categoria", b =>
                 {
                     b.Navigation("produtos");
+                });
+
+            modelBuilder.Entity("Shared.Order", b =>
+                {
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("Shared.ProductType", b =>

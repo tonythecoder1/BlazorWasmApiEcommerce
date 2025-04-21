@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Client;
 using BlazorComAPI.Client.Shared;
 using BlazorComAPI.Client;
+using Shared;
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -34,5 +35,6 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartServiceClient, CartServiceClient>();
 builder.Services.AddScoped<IAuthServiceClient, AuthServiceClient>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthState>();
+builder.Services.AddScoped<IOrderServiceClient, OrderServiceClient>();
 
 await builder.Build().RunAsync();

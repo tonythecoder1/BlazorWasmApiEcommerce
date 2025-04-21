@@ -2557,8 +2557,6 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/f4s7x3g0m9-1g6dzeoluu.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/8d2zyntsjl-xxwcmr94me.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/og1iz79ya8-pf4yq2tlc6.gz
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-r7wvck2heq.gz
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-asswebp5ys.gz
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/staticwebassets.build.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/staticwebassets.development.json
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/staticwebassets.build.endpoints.json
@@ -2573,6 +2571,8 @@
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/refint/BlazorComAPI.Client.dll
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/BlazorComAPI.Client.pdb
 /Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/ref/BlazorComAPI.Client.dll
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-574ipw8grq.gz
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-teh5l66xnc.gz
-/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-fc4r6orhi8.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-8oxpe5zugi.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-teiz9u1o6k.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-zgssot1iqo.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-dmkc5ut2ub.gz
+/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-ylhsh5ptg2.gz

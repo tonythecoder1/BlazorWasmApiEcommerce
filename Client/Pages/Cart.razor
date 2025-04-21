@@ -1,7 +1,9 @@
 @page "/cart"
 @using Server.Services
+@using global::Client.Services
 @using global::Shared
 @inject ICartServiceClient _ICartService
+@inject IOrderServiceClient _orderService
 
 
 
@@ -9,6 +11,10 @@
 
 @if (lista_Produto_Dto == null || lista_Produto_Dto.Count == 0)
 {
+    if(orderPlaced){
+        <span>Thank You For Your Order <a href="orders">Here</a></span>
+    }
+
     <div class="cart-empty">
         <span>O seu carrinho está vazio.</span>
     </div>
@@ -41,9 +47,12 @@ else
 
         <div class="cart-total">
             <span>Total (@lista_Produto_Dto.Count):</span>
-            <strong><i class="bi bi-currency-euro"></i> @lista_Produto_Dto.Sum(p => p.Price * p.Quantidade).ToString("F2") </strong>
+            <strong><i class="bi bi-currency-euro"></i> @lista_Produto_Dto.Sum(p => p.Price * p.Quantidade).ToString("F2")
+            </strong>
         </div>
     </div>
+
+    <button @onclick="PlaceOrder" class="btn alert-success float-right mt-1"> Place Order</button>
 }
 
 <style>
@@ -154,10 +163,12 @@ else
 
 @code {
     List<CartProductDTO> lista_Produto_Dto = new();
+    bool orderPlaced = false;
 
     protected override async Task OnInitializedAsync()
     {
         lista_Produto_Dto = await _ICartService.GetCartProductsDto();
+        orderPlaced = false;
     }
 
     private async Task RemoveProduct(int ProductId, int ProductTypeId)
@@ -175,6 +186,16 @@ else
             produto.Quantidade = 1;
         }
         await _ICartService.UpdateQuantidade(produto);
+    }
+
+    public async Task PlaceOrder()
+    {
+        await _orderService.PlaceOrder();
+        orderPlaced = true;
+        lista_Produto_Dto = await _ICartService.GetCartProductsDto();
+        await _ICartService.GetCartItemsCount();
+
+        StateHasChanged();
     }
 
 }

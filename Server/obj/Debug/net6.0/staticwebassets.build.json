@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "12V9mvJARAq1GQyex+KLfO73PhtqSvaYZJUa6tKc3JA=",
+  "Hash": "Sj5ax6vKfntKEcuuKbn9OfA2aS8hba+F0Om38URxBVY=",
   "Source": "BlazorComAPI.Server",
   "BasePath": "_content/BlazorComAPI.Server",
   "Mode": "Default",
@@ -43,8 +43,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "fc4r6orhi8",
-      "Integrity": "QZsY1zwVr1ypzZNVeraCMKqJdd6bJLonaV3s6gmbhgE=",
+      "Fingerprint": "ylhsh5ptg2",
+      "Integrity": "Jv2KKzgpVkZK5T0RZN0EYDyJvpqYGKnongCDR0kEv3w=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/blazor.boot.json"
@@ -85,8 +85,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "574ipw8grq",
-      "Integrity": "wZ6xgj997RBVfIwahL1IDFjgDckY5zTT69eQR11BnQw=",
+      "Fingerprint": "zgssot1iqo",
+      "Integrity": "3US27+FUQWyjNLyvqXLSXmtTDcq7WBuiEQdN2N1AwBk=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Client.dll"
@@ -106,8 +106,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "teh5l66xnc",
-      "Integrity": "m2vqdu/+Jab23JeH0/3W6d+9U/F2SyVuCm1RlA8L5SU=",
+      "Fingerprint": "dmkc5ut2ub",
+      "Integrity": "m1+s9SgSERfAvO8508T5r3AZAcOEGkFSERZB8SB1dCU=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Client.pdb"
@@ -127,8 +127,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "r7wvck2heq",
-      "Integrity": "KY9Kp5vUIdac0To6oI4LcvfH3l2YlB3qE07Qh9Jnou0=",
+      "Fingerprint": "8oxpe5zugi",
+      "Integrity": "uCiRfgEYZ1EVgLFU3nzjWo3C8CCRI84M7Ri0rP+y8yQ=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Shared.dll"
@@ -148,8 +148,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "asswebp5ys",
-      "Integrity": "RvzqyBRPLEnAz2VrJG6fBoU+QfXl2m47axjJWhLbXlc=",
+      "Fingerprint": "teiz9u1o6k",
+      "Integrity": "C8dVY3ITH9eoVNy1KRuLefdXM7q+DS6/4Z1HVWD0x3Q=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Shared.pdb"
@@ -6056,7 +6056,7 @@
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/d2v3f764i4-go5n3ra7z5.gz"
     },
     {
-      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-r7wvck2heq.gz",
+      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-8oxpe5zugi.gz",
       "SourceId": "BlazorComAPI.Client",
       "SourceType": "Project",
       "ContentRoot": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/",
@@ -6070,11 +6070,11 @@
       "RelatedAsset": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Shared.dll",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "cqqjvvy68p",
-      "Integrity": "FAmk/KFiWVQdf+Dyux/ojww0MmfPsf9AiMDq/ahvTk8=",
+      "Fingerprint": "q2ds2bffcs",
+      "Integrity": "ztDf9TUW6ES2aO+WHE2wWe74jjcezLid0l8fFU3NeyE=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-r7wvck2heq.gz"
+      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-8oxpe5zugi.gz"
     },
     {
       "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dhxuwuepks-otybn9apuw.gz",
@@ -6791,7 +6791,7 @@
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ixt4f2gc8w-zwchc6ueoy.gz"
     },
     {
-      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-teh5l66xnc.gz",
+      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-dmkc5ut2ub.gz",
       "SourceId": "BlazorComAPI.Client",
       "SourceType": "Project",
       "ContentRoot": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/",
@@ -6805,11 +6805,11 @@
       "RelatedAsset": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Client.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ojqbvbi7ag",
-      "Integrity": "JMaU9Nx/wg4EJUBH7Xlv+jvSHffVTqifZPlQLy3jNeo=",
+      "Fingerprint": "gt68a5nmmd",
+      "Integrity": "hEL5SkbIIplYfmyzq/me6vA+ZmAgg5IqfXV1fP9rWc8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-teh5l66xnc.gz"
+      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-dmkc5ut2ub.gz"
     },
     {
       "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j7tfscj373-j5se0js663.gz",
@@ -7085,7 +7085,7 @@
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/lfttq9bykz-drkuvnqm7h.gz"
     },
     {
-      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-fc4r6orhi8.gz",
+      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-ylhsh5ptg2.gz",
       "SourceId": "BlazorComAPI.Client",
       "SourceType": "Project",
       "ContentRoot": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/",
@@ -7099,11 +7099,11 @@
       "RelatedAsset": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "xs2rbxxyow",
-      "Integrity": "8eUJEfWysERVteyBUSq3RrD1QhteB7C4zN6oSNc0Hr4=",
+      "Fingerprint": "39b4c04709",
+      "Integrity": "CWIFsiYEcmOwrm3Go/tEl+Jqo8lyKc995kWaTZs/wLc=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-fc4r6orhi8.gz"
+      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-ylhsh5ptg2.gz"
     },
     {
       "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/lnz5i54jaq-noz3klg27t.gz",
@@ -7211,7 +7211,7 @@
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mq9gkyrxow-c4pz3rvw3c.gz"
     },
     {
-      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-574ipw8grq.gz",
+      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-zgssot1iqo.gz",
       "SourceId": "BlazorComAPI.Client",
       "SourceType": "Project",
       "ContentRoot": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/",
@@ -7225,11 +7225,11 @@
       "RelatedAsset": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Client.dll",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "3lv6jntaqw",
-      "Integrity": "Z+SNbzeDf7t1brBGo8hfqWCLSFOZ/3CxsG3vS2/o5bk=",
+      "Fingerprint": "cqlyuiyq6c",
+      "Integrity": "fFfOSqVbZD313Y7SNSjGHflF18JltA2STMLIn1FBVoY=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-574ipw8grq.gz"
+      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-zgssot1iqo.gz"
     },
     {
       "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mvmav37i81-bmf7fub13h.gz",
@@ -8429,7 +8429,7 @@
       "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xb3iwrs2nh-9swaimoo39.gz"
     },
     {
-      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-asswebp5ys.gz",
+      "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-teiz9u1o6k.gz",
       "SourceId": "BlazorComAPI.Client",
       "SourceType": "Project",
       "ContentRoot": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/",
@@ -8443,11 +8443,11 @@
       "RelatedAsset": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/bin/Debug/net6.0/wwwroot/_framework/BlazorComAPI.Shared.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "k11qz041o6",
-      "Integrity": "yAp+YRfQK11pdQuxFo30z7kACWeu1jSsYJNzUdIyZd0=",
+      "Fingerprint": "4zaysyfkky",
+      "Integrity": "8D/Vqb6kPP7GCqvD8RDOOX1FIMKtYGltnDdYVQxt8+M=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-asswebp5ys.gz"
+      "OriginalItemSpec": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-teiz9u1o6k.gz"
     },
     {
       "Identity": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xtzav0ta6o-6mu4tv72xv.gz",
@@ -9251,28 +9251,28 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"QZsY1zwVr1ypzZNVeraCMKqJdd6bJLonaV3s6gmbhgE=\""
+          "Value": "\"Jv2KKzgpVkZK5T0RZN0EYDyJvpqYGKnongCDR0kEv3w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 22:46:48 GMT"
+          "Value": "Mon, 21 Apr 2025 01:15:31 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-QZsY1zwVr1ypzZNVeraCMKqJdd6bJLonaV3s6gmbhgE="
+          "Value": "sha256-Jv2KKzgpVkZK5T0RZN0EYDyJvpqYGKnongCDR0kEv3w="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-fc4r6orhi8.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-ylhsh5ptg2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000110387460"
+          "Quality": "0.000110411836"
         }
       ],
       "ResponseHeaders": [
@@ -9290,15 +9290,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9058"
+          "Value": "9056"
         },
         {
           "Name": "ETag",
-          "Value": "\"8eUJEfWysERVteyBUSq3RrD1QhteB7C4zN6oSNc0Hr4=\""
+          "Value": "\"CWIFsiYEcmOwrm3Go/tEl+Jqo8lyKc995kWaTZs/wLc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 22:36:05 GMT"
+          "Value": "Mon, 21 Apr 2025 01:06:28 GMT"
         },
         {
           "Name": "Vary",
@@ -9310,19 +9310,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"QZsY1zwVr1ypzZNVeraCMKqJdd6bJLonaV3s6gmbhgE=\""
+          "Value": "W/\"Jv2KKzgpVkZK5T0RZN0EYDyJvpqYGKnongCDR0kEv3w=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-QZsY1zwVr1ypzZNVeraCMKqJdd6bJLonaV3s6gmbhgE="
+          "Value": "sha256-Jv2KKzgpVkZK5T0RZN0EYDyJvpqYGKnongCDR0kEv3w="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-fc4r6orhi8.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/ljkrzxa4gu-ylhsh5ptg2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9339,7 +9339,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9058"
+          "Value": "9056"
         },
         {
           "Name": "Content-Type",
@@ -9347,11 +9347,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8eUJEfWysERVteyBUSq3RrD1QhteB7C4zN6oSNc0Hr4=\""
+          "Value": "\"CWIFsiYEcmOwrm3Go/tEl+Jqo8lyKc995kWaTZs/wLc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 22:36:05 GMT"
+          "Value": "Mon, 21 Apr 2025 01:06:28 GMT"
         },
         {
           "Name": "Vary",
@@ -9361,7 +9361,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8eUJEfWysERVteyBUSq3RrD1QhteB7C4zN6oSNc0Hr4="
+          "Value": "sha256-CWIFsiYEcmOwrm3Go/tEl+Jqo8lyKc995kWaTZs/wLc="
         }
       ]
     },
@@ -9517,7 +9517,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "115712"
+          "Value": "118784"
         },
         {
           "Name": "Content-Type",
@@ -9525,28 +9525,28 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wZ6xgj997RBVfIwahL1IDFjgDckY5zTT69eQR11BnQw=\""
+          "Value": "\"3US27+FUQWyjNLyvqXLSXmtTDcq7WBuiEQdN2N1AwBk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 22:46:47 GMT"
+          "Value": "Mon, 21 Apr 2025 01:15:31 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wZ6xgj997RBVfIwahL1IDFjgDckY5zTT69eQR11BnQw="
+          "Value": "sha256-3US27+FUQWyjNLyvqXLSXmtTDcq7WBuiEQdN2N1AwBk="
         }
       ]
     },
     {
       "Route": "_framework/BlazorComAPI.Client.dll",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-574ipw8grq.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-zgssot1iqo.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000022403943"
+          "Quality": "0.000021748113"
         }
       ],
       "ResponseHeaders": [
@@ -9564,15 +9564,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "44634"
+          "Value": "45980"
         },
         {
           "Name": "ETag",
-          "Value": "\"Z+SNbzeDf7t1brBGo8hfqWCLSFOZ/3CxsG3vS2/o5bk=\""
+          "Value": "\"fFfOSqVbZD313Y7SNSjGHflF18JltA2STMLIn1FBVoY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 22:31:36 GMT"
+          "Value": "Mon, 21 Apr 2025 01:06:28 GMT"
         },
         {
           "Name": "Vary",
@@ -9584,19 +9584,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"wZ6xgj997RBVfIwahL1IDFjgDckY5zTT69eQR11BnQw=\""
+          "Value": "W/\"3US27+FUQWyjNLyvqXLSXmtTDcq7WBuiEQdN2N1AwBk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wZ6xgj997RBVfIwahL1IDFjgDckY5zTT69eQR11BnQw="
+          "Value": "sha256-3US27+FUQWyjNLyvqXLSXmtTDcq7WBuiEQdN2N1AwBk="
         }
       ]
     },
     {
       "Route": "_framework/BlazorComAPI.Client.dll.gz",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-574ipw8grq.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/mszbfa436t-zgssot1iqo.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9613,7 +9613,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "44634"
+          "Value": "45980"
         },
         {
           "Name": "Content-Type",
@@ -9621,11 +9621,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Z+SNbzeDf7t1brBGo8hfqWCLSFOZ/3CxsG3vS2/o5bk=\""
+          "Value": "\"fFfOSqVbZD313Y7SNSjGHflF18JltA2STMLIn1FBVoY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 22:31:36 GMT"
+          "Value": "Mon, 21 Apr 2025 01:06:28 GMT"
         },
         {
           "Name": "Vary",
@@ -9635,7 +9635,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Z+SNbzeDf7t1brBGo8hfqWCLSFOZ/3CxsG3vS2/o5bk="
+          "Value": "sha256-fFfOSqVbZD313Y7SNSjGHflF18JltA2STMLIn1FBVoY="
         }
       ]
     },
@@ -9654,7 +9654,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "71344"
+          "Value": "72464"
         },
         {
           "Name": "Content-Type",
@@ -9662,28 +9662,28 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"m2vqdu/+Jab23JeH0/3W6d+9U/F2SyVuCm1RlA8L5SU=\""
+          "Value": "\"m1+s9SgSERfAvO8508T5r3AZAcOEGkFSERZB8SB1dCU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 22:46:47 GMT"
+          "Value": "Mon, 21 Apr 2025 01:15:31 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-m2vqdu/+Jab23JeH0/3W6d+9U/F2SyVuCm1RlA8L5SU="
+          "Value": "sha256-m1+s9SgSERfAvO8508T5r3AZAcOEGkFSERZB8SB1dCU="
         }
       ]
     },
     {
       "Route": "_framework/BlazorComAPI.Client.pdb",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-teh5l66xnc.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-dmkc5ut2ub.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000018349297"
+          "Quality": "0.000018114629"
         }
       ],
       "ResponseHeaders": [
@@ -9701,15 +9701,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "54497"
+          "Value": "55203"
         },
         {
           "Name": "ETag",
-          "Value": "\"JMaU9Nx/wg4EJUBH7Xlv+jvSHffVTqifZPlQLy3jNeo=\""
+          "Value": "\"hEL5SkbIIplYfmyzq/me6vA+ZmAgg5IqfXV1fP9rWc8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 22:31:36 GMT"
+          "Value": "Mon, 21 Apr 2025 01:06:28 GMT"
         },
         {
           "Name": "Vary",
@@ -9721,19 +9721,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"m2vqdu/+Jab23JeH0/3W6d+9U/F2SyVuCm1RlA8L5SU=\""
+          "Value": "W/\"m1+s9SgSERfAvO8508T5r3AZAcOEGkFSERZB8SB1dCU=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-m2vqdu/+Jab23JeH0/3W6d+9U/F2SyVuCm1RlA8L5SU="
+          "Value": "sha256-m1+s9SgSERfAvO8508T5r3AZAcOEGkFSERZB8SB1dCU="
         }
       ]
     },
     {
       "Route": "_framework/BlazorComAPI.Client.pdb.gz",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-teh5l66xnc.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/j0us3i13pz-dmkc5ut2ub.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9750,7 +9750,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "54497"
+          "Value": "55203"
         },
         {
           "Name": "Content-Type",
@@ -9758,11 +9758,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"JMaU9Nx/wg4EJUBH7Xlv+jvSHffVTqifZPlQLy3jNeo=\""
+          "Value": "\"hEL5SkbIIplYfmyzq/me6vA+ZmAgg5IqfXV1fP9rWc8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 22:31:36 GMT"
+          "Value": "Mon, 21 Apr 2025 01:06:28 GMT"
         },
         {
           "Name": "Vary",
@@ -9772,7 +9772,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-JMaU9Nx/wg4EJUBH7Xlv+jvSHffVTqifZPlQLy3jNeo="
+          "Value": "sha256-hEL5SkbIIplYfmyzq/me6vA+ZmAgg5IqfXV1fP9rWc8="
         }
       ]
     },
@@ -9791,7 +9791,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12800"
+          "Value": "14848"
         },
         {
           "Name": "Content-Type",
@@ -9799,28 +9799,28 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KY9Kp5vUIdac0To6oI4LcvfH3l2YlB3qE07Qh9Jnou0=\""
+          "Value": "\"uCiRfgEYZ1EVgLFU3nzjWo3C8CCRI84M7Ri0rP+y8yQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 19:07:11 GMT"
+          "Value": "Mon, 21 Apr 2025 00:06:54 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KY9Kp5vUIdac0To6oI4LcvfH3l2YlB3qE07Qh9Jnou0="
+          "Value": "sha256-uCiRfgEYZ1EVgLFU3nzjWo3C8CCRI84M7Ri0rP+y8yQ="
         }
       ]
     },
     {
       "Route": "_framework/BlazorComAPI.Shared.dll",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-r7wvck2heq.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-8oxpe5zugi.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000190222560"
+          "Quality": "0.000165070981"
         }
       ],
       "ResponseHeaders": [
@@ -9838,15 +9838,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5256"
+          "Value": "6057"
         },
         {
           "Name": "ETag",
-          "Value": "\"FAmk/KFiWVQdf+Dyux/ojww0MmfPsf9AiMDq/ahvTk8=\""
+          "Value": "\"ztDf9TUW6ES2aO+WHE2wWe74jjcezLid0l8fFU3NeyE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 19:07:11 GMT"
+          "Value": "Mon, 21 Apr 2025 00:06:54 GMT"
         },
         {
           "Name": "Vary",
@@ -9858,19 +9858,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"KY9Kp5vUIdac0To6oI4LcvfH3l2YlB3qE07Qh9Jnou0=\""
+          "Value": "W/\"uCiRfgEYZ1EVgLFU3nzjWo3C8CCRI84M7Ri0rP+y8yQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KY9Kp5vUIdac0To6oI4LcvfH3l2YlB3qE07Qh9Jnou0="
+          "Value": "sha256-uCiRfgEYZ1EVgLFU3nzjWo3C8CCRI84M7Ri0rP+y8yQ="
         }
       ]
     },
     {
       "Route": "_framework/BlazorComAPI.Shared.dll.gz",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-r7wvck2heq.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/dcaklu7l1n-8oxpe5zugi.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9887,7 +9887,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5256"
+          "Value": "6057"
         },
         {
           "Name": "Content-Type",
@@ -9895,11 +9895,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FAmk/KFiWVQdf+Dyux/ojww0MmfPsf9AiMDq/ahvTk8=\""
+          "Value": "\"ztDf9TUW6ES2aO+WHE2wWe74jjcezLid0l8fFU3NeyE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 19:07:11 GMT"
+          "Value": "Mon, 21 Apr 2025 00:06:54 GMT"
         },
         {
           "Name": "Vary",
@@ -9909,7 +9909,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-FAmk/KFiWVQdf+Dyux/ojww0MmfPsf9AiMDq/ahvTk8="
+          "Value": "sha256-ztDf9TUW6ES2aO+WHE2wWe74jjcezLid0l8fFU3NeyE="
         }
       ]
     },
@@ -9928,7 +9928,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "14336"
+          "Value": "15136"
         },
         {
           "Name": "Content-Type",
@@ -9936,28 +9936,28 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RvzqyBRPLEnAz2VrJG6fBoU+QfXl2m47axjJWhLbXlc=\""
+          "Value": "\"C8dVY3ITH9eoVNy1KRuLefdXM7q+DS6/4Z1HVWD0x3Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 19:07:11 GMT"
+          "Value": "Mon, 21 Apr 2025 00:06:54 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RvzqyBRPLEnAz2VrJG6fBoU+QfXl2m47axjJWhLbXlc="
+          "Value": "sha256-C8dVY3ITH9eoVNy1KRuLefdXM7q+DS6/4Z1HVWD0x3Q="
         }
       ]
     },
     {
       "Route": "_framework/BlazorComAPI.Shared.pdb",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-asswebp5ys.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-teiz9u1o6k.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000126294519"
+          "Quality": "0.000121432908"
         }
       ],
       "ResponseHeaders": [
@@ -9975,15 +9975,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7917"
+          "Value": "8234"
         },
         {
           "Name": "ETag",
-          "Value": "\"yAp+YRfQK11pdQuxFo30z7kACWeu1jSsYJNzUdIyZd0=\""
+          "Value": "\"8D/Vqb6kPP7GCqvD8RDOOX1FIMKtYGltnDdYVQxt8+M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 19:07:11 GMT"
+          "Value": "Mon, 21 Apr 2025 00:06:54 GMT"
         },
         {
           "Name": "Vary",
@@ -9995,19 +9995,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"RvzqyBRPLEnAz2VrJG6fBoU+QfXl2m47axjJWhLbXlc=\""
+          "Value": "W/\"C8dVY3ITH9eoVNy1KRuLefdXM7q+DS6/4Z1HVWD0x3Q=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RvzqyBRPLEnAz2VrJG6fBoU+QfXl2m47axjJWhLbXlc="
+          "Value": "sha256-C8dVY3ITH9eoVNy1KRuLefdXM7q+DS6/4Z1HVWD0x3Q="
         }
       ]
     },
     {
       "Route": "_framework/BlazorComAPI.Shared.pdb.gz",
-      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-asswebp5ys.gz",
+      "AssetFile": "/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/obj/Debug/net6.0/compressed/xhahurl0gu-teiz9u1o6k.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10024,7 +10024,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7917"
+          "Value": "8234"
         },
         {
           "Name": "Content-Type",
@@ -10032,11 +10032,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"yAp+YRfQK11pdQuxFo30z7kACWeu1jSsYJNzUdIyZd0=\""
+          "Value": "\"8D/Vqb6kPP7GCqvD8RDOOX1FIMKtYGltnDdYVQxt8+M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 19:07:11 GMT"
+          "Value": "Mon, 21 Apr 2025 00:06:54 GMT"
         },
         {
           "Name": "Vary",
@@ -10046,7 +10046,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-yAp+YRfQK11pdQuxFo30z7kACWeu1jSsYJNzUdIyZd0="
+          "Value": "sha256-8D/Vqb6kPP7GCqvD8RDOOX1FIMKtYGltnDdYVQxt8+M="
         }
       ]
     },
