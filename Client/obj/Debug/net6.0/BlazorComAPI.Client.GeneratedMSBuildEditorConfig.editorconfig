@@ -48,6 +48,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/Pages/OrderDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3JkZXJEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/Pages/OrdersPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3JkZXJzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/antonyferreira/Documents/BlazorWasm/BlazorWasmApiEcommerce/Client/Pages/ProductDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdERldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

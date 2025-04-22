@@ -1,0 +1,122 @@
+@page "/orders/{orderId:int}"
+@using Server.Services;
+@using global::Client.Services
+@inject IOrderServiceClient _orderService
+
+@if (order == null)
+{
+
+    <span> Loading Order</span>
+}
+else
+{
+    <h3>Order from @order.Date</h3>
+
+    <div>
+        @foreach (var product in order.Produtos)
+        {
+            <div class="container">
+                <div class="image-wrapper">
+                    <img src="@product.ImageUrl" class="image" />
+                </div>
+                <div class="name">
+                    <h5><a href="/product/@product.ProductId">@product.Title</a></h5>
+                    <span>@product.ProductType</span>
+                    <span>Quantity: @product.Quantidade</span>
+                </div>
+                <div class="product-price">
+                    @product.TotalPreco
+                </div>
+            </div>
+        }
+        <div class="product-price">
+            Total: @order.TotalPrice
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public int orderId { get; set; }
+
+    OrderDetailsResponseDTO order = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (orderId > 0)
+        {
+            order = await _orderService.GetOrderDetails(orderId);
+        }
+    }
+
+}
+
+
+<style>
+    h3 {
+        font-size: 24px;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fefefe;
+        border-radius: 10px;
+        padding: 16px;
+        margin: 12px 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-wrapper {
+        flex: 0 0 100px;
+        margin-right: 16px;
+    }
+
+    .image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    .name {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .name h5 {
+        font-size: 1rem;
+        margin: 0;
+        color: #333;
+    }
+
+    .name a {
+        text-decoration: none;
+        color: #0078D7;
+    }
+
+    .name a:hover {
+        text-decoration: underline;
+    }
+
+    .name span {
+        font-size: 0.85rem;
+        color: #555;
+    }
+
+    .product-price {
+        font-weight: bold;
+        font-size: 1rem;
+        color: #28a745;
+        margin-left: 16px;
+        white-space: nowrap;
+        text-align: right;
+    }
+</style>

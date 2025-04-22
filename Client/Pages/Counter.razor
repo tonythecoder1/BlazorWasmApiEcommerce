@@ -11,17 +11,6 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-@foreach (var item in lista_cart)
-{
-    if (item.Quantidade == 1)
-    {
-        currentCount++;
-    }
-    else if (item.Quantidade > 1)
-    {
-        currentCount = currentCount + item.Quantidade;
-    } 
-}
 
 @code {
 

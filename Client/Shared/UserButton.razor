@@ -16,6 +16,8 @@
         <AuthorizeView>
             <Authorized>
                 <button class="dropdown-item" @onclick="Logout">Logout</button>
+                <a href="userpage" class="dropdown-item"> User Page</a>
+                <a href="orders" class="dropdown-item"> Orders</a>
             </Authorized>
             <NotAuthorized>
                 <a href="/register" class="dropdown-item">Register</a>

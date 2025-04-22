@@ -12,5 +12,6 @@ namespace Server.Services
         Task<bool> UserExists (string Email);
         Task<string?> LoginUser(UserLoginDTO userLoginDTO);
         Task<bool> ChangePassword(string userId, string newPassword);
+        string GetUserId();
     }
 }

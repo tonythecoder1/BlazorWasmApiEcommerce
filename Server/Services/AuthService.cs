@@ -20,11 +20,14 @@ namespace Server.Services
         protected readonly DbContextServer _dbContextServer;
         protected readonly UserManager<MyUser> _userManager;
         protected readonly IConfiguration _iconfiguration;
-        public AuthService(DbContextServer contextServer, UserManager<MyUser> userManager, IConfiguration _iconfig)
+        protected readonly IHttpContextAccessor _contextAccessor;
+        public AuthService(DbContextServer contextServer, UserManager<MyUser> userManager, 
+        IConfiguration _iconfig, IHttpContextAccessor httpContextAccessor)
         {
             this._dbContextServer = contextServer;
             this._userManager = userManager;
             this._iconfiguration = _iconfig;
+            this._contextAccessor = httpContextAccessor;
         }
 
         public async Task<string?> LoginUser(UserLoginDTO userLoginDTO)
@@ -115,5 +118,6 @@ namespace Server.Services
             return result.Succeeded;
         }
 
+        public string GetUserId() => _contextAccessor.HttpContext.User.FindFirst("nameid")?.Value;
     }
 }

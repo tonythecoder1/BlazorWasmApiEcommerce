@@ -6,6 +6,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
+using Server.Services;
+using Shared;
 
 namespace Client.Services
 {
@@ -21,6 +23,18 @@ namespace Client.Services
             this._httpClient = httpClient;
             this._authenticationStateProvider = authenticationStateProvider;
             this._navigationManager = navigationManager;
+        }
+
+        public async Task<OrderDetailsResponseDTO> GetOrderDetails(int orderId)
+        {
+            var response = await _httpClient.GetFromJsonAsync<OrderDetailsResponseDTO>($"/api/order/{orderId}");
+            return response ?? new OrderDetailsResponseDTO();
+        }
+
+        public async Task<List<OrderFinalDTO>> GetOrders()
+        {
+            var result = await _httpClient.GetFromJsonAsync<List<OrderFinalDTO>>("api/order");
+            return result ?? new List<OrderFinalDTO>();
         }
 
         public async Task<ClaimsPrincipal> GetUser()

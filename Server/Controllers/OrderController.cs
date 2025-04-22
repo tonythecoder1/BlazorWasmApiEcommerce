@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Server.Services;
+using Shared;
 
 namespace Server.Controllers
 {
@@ -23,6 +24,20 @@ namespace Server.Controllers
         {
             var order = await _orderService.PlaceOrder();
             return Ok(order);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<OrderFinalDTO>>> GetOrderSumario()
+        {
+            var orderSummary = await _orderService.GetOrders();
+            return Ok(orderSummary);
+        }
+
+        [HttpGet("{orderId}")]
+        public async Task<ActionResult<List<OrderFinalDTO>>> GetOrderDetils(int orderId)
+        {
+            var orderDetails = await _orderService.GetOrdersDetails(orderId);
+            return Ok(orderDetails);
         }
     }
 }
